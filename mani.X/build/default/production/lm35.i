@@ -1,4 +1,4 @@
-# 1 "man.c"
+# 1 "lm35.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,7 +6,12 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "man.c" 2
+# 1 "lm35.c" 2
+
+# 1 "./lm35.h" 1
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5737,100 +5742,65 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 2 "man.c" 2
-# 1 "./i12c.h" 1
+# 5 "./lm35.h" 2
 
 
 
 
 
-
-void I2C_Init(void);
-void I2C_Start(void);
-void I2C_Stop(void);
-void I2C_RepeatedStart(void);
-unsigned char I2C_Write(unsigned char data);
-# 3 "man.c" 2
-# 1 "./ssd1306.h" 1
-# 12 "./ssd1306.h"
-void OLED_Init(void);
-void OLED_Clear(void);
-void OLED_SetCursor(unsigned char page, unsigned char col);
-void OLED_SendChar(char c);
-void OLED_Print(unsigned char page, unsigned char col, const char *str);
-# 4 "man.c" 2
-# 1 "./lm35.h" 1
-# 10 "./lm35.h"
 void ADC_Init(void);
 float leerTemperatura(void);
-# 5 "man.c" 2
+# 3 "lm35.c" 2
 
-#pragma config FOSC = INTOSC_HS
-#pragma config CPUDIV = OSC1_PLL2
-#pragma config PLLDIV = 1
-#pragma config WDT = OFF
-#pragma config PWRT = ON
-#pragma config BOR = OFF
-#pragma config LVP = OFF
-#pragma config MCLRE = ON
-#pragma config PBADEN = OFF
-#pragma config DEBUG = OFF
+void ADC_Init(void) {
+
+    UCON = 0x00;
+    UCFG = 0x08;
 
 
+    TRISAbits.TRISA0 = 1;
+
+    ADCON1 = 0x0E;
+    ADCON2 = 0xBE;
+
+    ADCON0 = 0x01;
 
 
-void tempToStr(float num, char *buf) {
-    unsigned char i, entero, decimal;
-    for(i = 0; i < 10; i++) buf[i] = ' ';
-    if(num < 0.0) num = 0.0;
-    if(num > 55.0) num = 55.0;
-    entero = (unsigned char)num;
-    decimal = (unsigned char)((num - (float)entero) * 10.0);
-    buf[0] = (char)((entero / 10) + '0');
-    buf[1] = (char)((entero % 10) + '0');
-    buf[2] = '.';
-    buf[3] = (char)(decimal + '0');
-    buf[4] = ' ';
-    buf[5] = 'C';
-    buf[6] = ' ';
-    buf[7] = '\0';
+    _delay((unsigned long)((20)*(8000000UL/4000.0)));
 }
 
-void main(void) {
-    OSCCON = 0x72;
-    while(!OSCCONbits.IOFS);
-    CMCON = 0x07;
+static unsigned int leer_adc_raw(void) {
 
-    ADC_Init();
-    I2C_Init();
-    OLED_Init();
+    _delay((unsigned long)((25)*(8000000UL/4000000.0)));
 
 
-    OLED_Print(0, 15, "* INVERNADERO *");
-    OLED_Print(2, 10, "Temp:");
-    OLED_Print(6, 10, "Estado:");
+    ADCON0bits.GO_nDONE = 1;
 
-    float temp;
-    char buf[10];
-    char *estado;
+    while(ADCON0bits.GO_nDONE);
 
-    while(1) {
+    return (unsigned int)(((unsigned int)ADRESH << 8) | ADRESL);
+}
 
-        temp = leerTemperatura();
-        tempToStr(temp, buf);
+float leerTemperatura(void) {
+    unsigned long suma = 0;
+    unsigned char i;
+    unsigned int promedio;
+    float voltaje_mV;
+    float temperatura;
 
-
-        OLED_Print(2, 46, "        ");
-        OLED_Print(2, 46, buf);
-
-
-        if(temp < 15.0) estado = "  FRIO  ";
-        else if(temp > 30.0) estado = "  CALOR ";
-        else estado = " NORMAL ";
-
-        OLED_Print(6, 52, "        ");
-        OLED_Print(6, 52, estado);
-
-        _delay((unsigned long)((500)*(8000000UL/4000.0)));
+    for(i = 0; i < 8; i++) {
+        suma += leer_adc_raw();
+        _delay((unsigned long)((2)*(8000000UL/4000.0)));
     }
+
+
+    promedio = (unsigned int)(suma / 8);
+
+
+    voltaje_mV = (float)promedio * 4.8828;
+
+
+    temperatura = voltaje_mV / 10.0;
+
+    return temperatura;
 }
