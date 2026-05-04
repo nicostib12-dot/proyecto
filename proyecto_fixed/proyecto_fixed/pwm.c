@@ -17,6 +17,6 @@ void set_PWM_duty(int duty) {
 
     if(duty > 1023) duty = 1023;
 
-    CCPR1L = duty >> 2;
+    CCPR1L = (unsigned char)(duty >> 2);
     CCP1CONbits.DC1B = duty & 0x03;
 }

@@ -11,11 +11,11 @@
 #pragma config WDT = OFF
 #pragma config LVP = OFF
 #pragma config PBADEN = OFF
-#pragma config MCLRE = ON   // ? agregar esto
+#pragma config MCLRE = ON   // agregar esto
 
 // Pines
 #define CALENTADOR LATDbits.LATD0
-#define LED        LATDbits.LATD2
+#define LED_TIRA   LATDbits.LATD2
 #define ALARMA     LATDbits.LATD3
 
 #endif

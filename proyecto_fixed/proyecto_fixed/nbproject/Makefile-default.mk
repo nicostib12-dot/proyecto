@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=main.c adc.c sensores.c control.c pwm.c i2c.c oled.c bme280.c
+SOURCEFILES_QUOTED_IF_SPACED=main.c adc.c sensores.c control.c pwm.c i2c.c oled.c bme280.c bh1750.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/adc.p1 ${OBJECTDIR}/sensores.p1 ${OBJECTDIR}/control.p1 ${OBJECTDIR}/pwm.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/oled.p1 ${OBJECTDIR}/bme280.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/adc.p1.d ${OBJECTDIR}/sensores.p1.d ${OBJECTDIR}/control.p1.d ${OBJECTDIR}/pwm.p1.d ${OBJECTDIR}/i2c.p1.d ${OBJECTDIR}/oled.p1.d ${OBJECTDIR}/bme280.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/main.p1 ${OBJECTDIR}/adc.p1 ${OBJECTDIR}/sensores.p1 ${OBJECTDIR}/control.p1 ${OBJECTDIR}/pwm.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/oled.p1 ${OBJECTDIR}/bme280.p1 ${OBJECTDIR}/bh1750.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/main.p1.d ${OBJECTDIR}/adc.p1.d ${OBJECTDIR}/sensores.p1.d ${OBJECTDIR}/control.p1.d ${OBJECTDIR}/pwm.p1.d ${OBJECTDIR}/i2c.p1.d ${OBJECTDIR}/oled.p1.d ${OBJECTDIR}/bme280.p1.d ${OBJECTDIR}/bh1750.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/adc.p1 ${OBJECTDIR}/sensores.p1 ${OBJECTDIR}/control.p1 ${OBJECTDIR}/pwm.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/oled.p1 ${OBJECTDIR}/bme280.p1
+OBJECTFILES=${OBJECTDIR}/main.p1 ${OBJECTDIR}/adc.p1 ${OBJECTDIR}/sensores.p1 ${OBJECTDIR}/control.p1 ${OBJECTDIR}/pwm.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/oled.p1 ${OBJECTDIR}/bme280.p1 ${OBJECTDIR}/bh1750.p1
 
 # Source Files
-SOURCEFILES=main.c adc.c sensores.c control.c pwm.c i2c.c oled.c bme280.c
+SOURCEFILES=main.c adc.c sensores.c control.c pwm.c i2c.c oled.c bme280.c bh1750.c
 
 
 
@@ -152,6 +152,14 @@ ${OBJECTDIR}/bme280.p1: bme280.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/bme280.d ${OBJECTDIR}/bme280.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/bme280.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/bh1750.p1: bh1750.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/bh1750.p1.d 
+	@${RM} ${OBJECTDIR}/bh1750.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/bh1750.p1 bh1750.c 
+	@-${MV} ${OBJECTDIR}/bh1750.d ${OBJECTDIR}/bh1750.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/bh1750.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/main.p1: main.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -216,6 +224,14 @@ ${OBJECTDIR}/bme280.p1: bme280.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/bme280.p1 bme280.c 
 	@-${MV} ${OBJECTDIR}/bme280.d ${OBJECTDIR}/bme280.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/bme280.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/bh1750.p1: bh1750.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/bh1750.p1.d 
+	@${RM} ${OBJECTDIR}/bh1750.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/bh1750.p1 bh1750.c 
+	@-${MV} ${OBJECTDIR}/bh1750.d ${OBJECTDIR}/bh1750.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/bh1750.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

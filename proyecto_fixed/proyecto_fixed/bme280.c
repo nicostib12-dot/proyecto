@@ -3,7 +3,7 @@
 #include "bme280.h"
 #include "config.h"
 
-#define BME280_ADDR 0x76  // Dirección de 7 bits
+#define BME280_ADDR 0x76  // SDO=GND -> 0x76, SDO=VCC -> 0x7
 
 //-------------------------------------
 // Escritura en registro
@@ -23,14 +23,18 @@ void BME280_Write(unsigned char reg, unsigned char data)
 unsigned char BME280_Read(unsigned char reg)
 {
     unsigned char data;
-
+    // Fase escritura: enviar registro a leer
     I2C_Start();
-    I2C_Write(BME280_ADDR << 1); // Write
+    I2C_Write(BME280_ADDR << 1);       // Write
     I2C_Write(reg);
+    I2C_Stop();                         // Stop antes del repeated start
 
-    I2C_Start(); // Repeated Start
+    __delay_us(10);
+
+    // Fase lectura
+    I2C_Start();
     I2C_Write((BME280_ADDR << 1) | 1); // Read
-    data = I2C_Read(0); // NACK
+    data = I2C_Read(0);                 // unico byte
     I2C_Stop();
 
     return data;
@@ -43,6 +47,7 @@ void BME280_Init()
 {
     BME280_Write(0xF2, 0x01); // Humedad oversampling x1
     BME280_Write(0xF4, 0x27); // Temp + presión + modo normal
+    BME280_Write(0xF5, 0xA0);
 }
 
 //-------------------------------------

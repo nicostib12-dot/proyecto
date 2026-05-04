@@ -12,6 +12,7 @@
       <itemPath>i2c.h</itemPath>
       <itemPath>bme280.h</itemPath>
       <itemPath>oled.h</itemPath>
+      <itemPath>bh1750.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -33,6 +34,7 @@
       <itemPath>i2c.c</itemPath>
       <itemPath>oled.c</itemPath>
       <itemPath>bme280.c</itemPath>
+      <itemPath>bh1750.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
