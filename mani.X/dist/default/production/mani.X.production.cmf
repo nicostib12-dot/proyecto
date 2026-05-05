@@ -67,11 +67,11 @@ text50 CODE 0 232E 232E 12 1 2
 text51 CODE 0 23F4 23F4 24 1 2
 cstackCOMRAM COMRAM 1 1 1 5F 1 1
 cstackBANK0 BANK0 1 60 60 76 1 1
-cstackBANK1 BANK1 1 100 100 B0 1 1
-bssBANK0 BANK0 1 D6 D6 15 1 1
+cstackBANK1 BANK1 1 100 100 B8 1 1
+bssBANK0 BANK0 1 D6 D6 1B 1 1
 mediumconst MEDIUMCONST 0 7D80 7D80 27C 1 2
 config CONFIG 4 300000 300000 8 1 1
-$C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+$C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 init CODE 0 7FFC 7FFC 4 1 2
 reset_vec CODE 0 0 0 4 1 2
 config CONFIG 4 300000 300000 8 1 1
@@ -81,11 +81,11 @@ config CONFIG 4 300000 300000 8 1 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM EB-FF 1
-RAM 1B0-7FF 1
+RAM F1-FF 1
+RAM 1B8-7FF 1
 SFR F60-FFF 1
-BANK0 EB-FF 1
-BANK1 1B0-1FF 1
+BANK0 F1-FF 1
+BANK1 1B8-1FF 1
 BANK2 200-2FF 1
 BANK3 300-3FF 1
 BANK4 400-4FF 1
@@ -96,8 +96,8 @@ CONST 4-232D 1
 IDLOC 200000-200007 1
 SMALLCONST 800-232D 1
 CODE 4-232D 1
-BIGRAM EB-FF 1
-BIGRAM 1B0-7FF 1
+BIGRAM F1-FF 1
+BIGRAM 1B8-7FF 1
 BIGSFR F60-FFF 1
 CONFIG 300008-30000D 1
 EEDATA F00000-F000FF 1
@@ -1187,20 +1187,20 @@ $dist/default/production\mani.X.production.o
 4324 text0 CODE >136:C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\man.c
 4336 text0 CODE >137:C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\man.c
 4346 text0 CODE >139:C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\man.c
-2368 cinit CODE >3442:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-2368 cinit CODE >3444:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-2368 cinit CODE >3447:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-2368 cinit CODE >3479:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-236C cinit CODE >3480:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-236E cinit CODE >3481:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-236E cinit CODE >3482:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-2370 cinit CODE >3483:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-2372 cinit CODE >3484:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-2374 cinit CODE >3490:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-2374 cinit CODE >3493:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-2376 cinit CODE >3494:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-2378 cinit CODE >3495:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
-237A cinit CODE >3496:C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_1.s
+2368 cinit CODE >3792:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+2368 cinit CODE >3794:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+2368 cinit CODE >3797:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+2368 cinit CODE >3841:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+236C cinit CODE >3842:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+236E cinit CODE >3843:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+236E cinit CODE >3844:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+2370 cinit CODE >3845:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+2372 cinit CODE >3846:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+2374 cinit CODE >3852:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+2374 cinit CODE >3855:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+2376 cinit CODE >3856:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+2378 cinit CODE >3857:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
+237A cinit CODE >3858:C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_1.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1217,7 +1217,7 @@ ___awdiv@counter 5 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.produc
 ___lwmod@counter 5 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 __Lmediumconst 7D80 0 MEDIUMCONST 0 mediumconst dist/default/production\mani.X.production.o
 __Hspace_0 8000 0 ABS 0 - dist/default/production\mani.X.production.o
-__Hspace_1 1B0 0 ABS 0 - dist/default/production\mani.X.production.o
+__Hspace_1 1B8 0 ABS 0 - dist/default/production\mani.X.production.o
 __Hspace_2 0 0 ABS 0 - dist/default/production\mani.X.production.o
 __Hspace_4 600008 0 ABS 0 - dist/default/production\mani.X.production.o
 ?_BME280_ReadInt16 4 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
@@ -1236,37 +1236,39 @@ __Lsmallconst 0 0 SMALLCONST 0 smallconst dist/default/production\mani.X.product
 main@bufTemp 97 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
 _UCFG F6F 0 ABS 0 - dist/default/production\mani.X.production.o
 _UCON F6D 0 ABS 0 - dist/default/production\mani.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+___sp 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 _dp_h 7F64 0 MEDIUMCONST 0 mediumconst dist/default/production\mani.X.production.o
 _dp_l 7F5C 0 MEDIUMCONST 0 mediumconst dist/default/production\mani.X.production.o
 _main 40C6 0 CODE 0 text0 dist/default/production\mani.X.production.o
 _powf 58DE 0 CODE 0 text21 dist/default/production\mani.X.production.o
-___stack_hi 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-___stack_lo 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-start 7FFC 0 CODE 0 init C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-___flmul@aexp 31 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
+___stack_hi 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+___stack_lo 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+start 7FFC 0 CODE 0 init C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+___flmul@aexp 35 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 ___flmul@bexp 36 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 ___flmul@prod 37 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 ___flmul@sign 30 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 ___flmul@temp 3B 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 _BH1750_SendCmd 2418 0 CODE 0 text47 dist/default/production\mani.X.production.o
-powf@i 11C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@j 1A0 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@k 19C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@n 180 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@r 148 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@s 158 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@t 1A8 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@u 174 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@v 178 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@w 138 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_estado_calentador ED 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
+powf@i 128 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@j 1A8 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@k 1A4 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@n 184 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@r 150 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@s 160 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@t 1B0 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@u 17C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@v 180 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@w 144 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
 powf@x 56 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 powf@y 5A 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
-powf@z 1AC 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@z 1B4 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
 ?___lmul 1 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 BH1750_LeerBytes@lsb 9 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 BH1750_LeerBytes@msb 8 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 OLED_Clear@page 6 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
+_vent_por_aire E8 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 floatStr@buf 4B 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 floatStr@num 47 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 _I2C_Start 232E 0 CODE 0 text50 dist/default/production\mani.X.production.o
@@ -1277,11 +1279,11 @@ _BME280_LeerCalibracion 2D16 0 CODE 0 text37 dist/default/production\mani.X.prod
 BH1750_SendCmd@cmd 3 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 __end_of_OLED_Data 23B8 0 CODE 0 text18 dist/default/production\mani.X.production.o
 __end_of_OLED_Init 2C56 0 CODE 0 text14 dist/default/production\mani.X.production.o
-__accesstop 60 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-intlevel0 0 0 CODE 0 text C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-intlevel1 0 0 CODE 0 text C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-intlevel2 0 0 CODE 0 text C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-intlevel3 0 0 CODE 0 text C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+__accesstop 60 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+intlevel0 0 0 CODE 0 text C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+intlevel1 0 0 CODE 0 text C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+intlevel2 0 0 CODE 0 text C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+intlevel3 0 0 CODE 0 text C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 BME280_LeerCalibracion@e4 E 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 BME280_LeerCalibracion@e5 10 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 BME280_LeerCalibracion@e6 F 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
@@ -1303,8 +1305,8 @@ ___awdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.produ
 BME280_ReadUInt16@lsb 8 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 BME280_ReadUInt16@msb 9 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 BME280_ReadUInt16@reg A 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
-___inthi_sp 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-___intlo_sp 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+___inthi_sp 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+___intlo_sp 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 BME280_CalcularTFine@var1 20 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 BME280_CalcularTFine@var2 24 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 BME280_CalcularTFine@xlsb 2E 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
@@ -1320,7 +1322,7 @@ OLED_Print@str A 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.producti
 main@hum CD 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
 main@lux D1 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
 main@ppm C9 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
-_BME280_CalcularTFine$1820 28 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
+_BME280_CalcularTFine$1970 28 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 ___fldiv@aexp 55 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 ___fldiv@bexp 54 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 ___fldiv@sign 4D 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
@@ -1376,15 +1378,16 @@ humStr@entero 4D 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.producti
 _OSCCON FD3 0 ABS 0 - dist/default/production\mani.X.production.o
 __HnvFARRAM 0 0 FARRAM 0 nvFARRAM dist/default/production\mani.X.production.o
 _TRISAbits F92 0 ABS 0 - dist/default/production\mani.X.production.o
+_TRISDbits F95 0 ABS 0 - dist/default/production\mani.X.production.o
 ___lldiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
-powf@p_h 198 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@p_l 164 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@s_h 16C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@s_l 124 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@t_h 168 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@t_l 12C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@z_h 114 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@z_l 118 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@p_h 1A0 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@p_l 16C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@s_h 174 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@s_l 130 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@t_h 170 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@t_l 134 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@z_h 120 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@z_l 124 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
 __end_of_luxStr 370C 0 CODE 0 text2 dist/default/production\mani.X.production.o
 ___rparam_used 1 0 ABS 0 - dist/default/production\mani.X.production.o
 __end_of_L1 7FBC 0 MEDIUMCONST 0 mediumconst dist/default/production\mani.X.production.o
@@ -1413,7 +1416,7 @@ BME280_CalcularTFine@msb 2C 0 COMRAM 1 cstackCOMRAM dist/default/production\mani
 MQ135_calcularPPM@ppm 79 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
 __end_of_ppmStr 2EC6 0 CODE 0 text1 dist/default/production\mani.X.production.o
 __end_of_OLED_Clear 2556 0 CODE 0 text15 dist/default/production\mani.X.production.o
-isa$xinst 0 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+isa$xinst 0 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 __end_of_OLED_Print 27AE 0 CODE 0 text12 dist/default/production\mani.X.production.o
 leerTemperatura@promedio 68 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
 _leer_adc_raw 243E 0 CODE 0 text6 dist/default/production\mani.X.production.o
@@ -1486,7 +1489,7 @@ __Ltext9 0 0 ABS 0 text9 dist/default/production\mani.X.production.o
 luxStr@i 4C 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 __Hfarbss 0 0 FARRAM 0 farbss dist/default/production\mani.X.production.o
 BME280_ReadReg@reg 2 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
-___flmul@grs 32 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
+___flmul@grs 31 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 __Lintcode_body 0 0 ABS 0 intcode_body dist/default/production\mani.X.production.o
 OLED_Clear@col 5 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 floatStr@decimal 4D 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
@@ -1521,23 +1524,25 @@ __Hirdata 0 0 CODE 0 irdata dist/default/production\mani.X.production.o
 __end_of_MQ135_calcularRs 30D0 0 CODE 0 text19 dist/default/production\mani.X.production.o
 _BH1750_Init 2596 0 CODE 0 text46 dist/default/production\mani.X.production.o
 __S0 8000 0 ABS 0 - dist/default/production\mani.X.production.o
-__S1 1B0 0 ABS 0 - dist/default/production\mani.X.production.o
+__S1 1B8 0 ABS 0 - dist/default/production\mani.X.production.o
 __S4 0 0 ABS 0 - dist/default/production\mani.X.production.o
 __S5 0 0 ABS 0 - dist/default/production\mani.X.production.o
+_estado_led EB 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 _BME280_ReadUInt16 248E 0 CODE 0 text38 dist/default/production\mani.X.production.o
-_BME280_ReadHumidity$1821 8B 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
-_BME280_ReadHumidity$1822 79 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
-_BME280_ReadHumidity$1823 7D 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
-_BME280_ReadHumidity$1824 81 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
-_BME280_ReadHumidity$1825 85 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
+_estado_ventilador EC 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
+_BME280_ReadHumidity$1971 8B 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
+_BME280_ReadHumidity$1972 79 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
+_BME280_ReadHumidity$1973 7D 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
+_BME280_ReadHumidity$1974 81 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
+_BME280_ReadHumidity$1975 85 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
 __end_of_font5x8 7F5C 0 MEDIUMCONST 0 mediumconst dist/default/production\mani.X.production.o
 ?_BME280_ReadHumidity 56 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
-_dig_H1 EA 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
+_dig_H1 F0 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 _dig_H2 E0 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
-_dig_H3 E9 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
+_dig_H3 EF 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 _dig_H4 DE 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 _dig_H5 DC 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
-_dig_H6 E8 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
+_dig_H6 EE 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 _dig_T1 E6 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 _dig_T2 E4 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 _dig_T3 E2 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
@@ -1660,6 +1665,7 @@ __ptext49 2340 0 CODE 0 text49 dist/default/production\mani.X.production.o
 __ptext50 232E 0 CODE 0 text50 dist/default/production\mani.X.production.o
 __ptext51 23F4 0 CODE 0 text51 dist/default/production\mani.X.production.o
 floatStr@maxVal 4C 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
+_vent_por_humedad E9 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 ___awdiv 2C56 0 CODE 0 text11 dist/default/production\mani.X.production.o
 ___awmod 2A42 0 CODE 0 text10 dist/default/production\mani.X.production.o
 ___fladd 4EF4 0 CODE 0 text26 dist/default/production\mani.X.production.o
@@ -1680,7 +1686,8 @@ ___lmul@multiplier 1 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.prod
 _ppmStr 2DDE 0 CODE 0 text1 dist/default/production\mani.X.production.o
 __Lcomram 0 0 ABS 0 comram dist/default/production\mani.X.production.o
 __Lconfig 0 0 CONFIG 4 config dist/default/production\mani.X.production.o
-_MQ135_calcularPPM$1819 71 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
+_MQ135_calcularPPM$1969 71 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
+_LATDbits F8C 0 ABS 0 - dist/default/production\mani.X.production.o
 ___fldiv@grs 50 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 ___fldiv@rem 49 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 __Lsivt_hi 0 0 CODE 0 sivt_hi dist/default/production\mani.X.production.o
@@ -1698,20 +1705,20 @@ sqrtf@s A 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 sqrtf@t 16 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 sqrtf@x 1 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 _OLED_SetCursor 23D6 0 CODE 0 text16 dist/default/production\mani.X.production.o
-___inthi_stack_hi 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-___inthi_stack_lo 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+___inthi_stack_hi 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+___inthi_stack_lo 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 ___lwdiv@divisor 8 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 humStr@i 4E 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 __Lfardata 0 0 FARRAM 0 fardata dist/default/production\mani.X.production.o
-isa$std 1 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+isa$std 1 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 sqrtf@ix 22 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 _t_fine D6 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 ___fldiv@new_exp 4E 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 _scalbnf 3C1C 0 CODE 0 text23 dist/default/production\mani.X.production.o
 leerTemperatura@temperatura 64 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
-powf@yisint 14C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-stackhi 0 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-stacklo 0 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+powf@yisint 154 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+stackhi 0 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+stacklo 0 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 __end_of_MQ135_Init 2596 0 CODE 0 text30 dist/default/production\mani.X.production.o
 __Lintcode 8 0 CODE 0 intcode dist/default/production\mani.X.production.o
 main@adc_mq C1 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
@@ -1722,9 +1729,9 @@ _ADCON0bits FC2 0 ABS 0 - dist/default/production\mani.X.production.o
 OLED_SetCursor@col 3 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 ___fladd@grs 10 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 main@bme_ok D5 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
-main@bufHum A9 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
-main@bufLux B3 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
-main@bufPPM A1 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
+main@bufHum A1 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
+main@bufLux AB 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
+main@bufPPM B5 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
 __end_of_BME280_ReadReg 2676 0 CODE 0 text40 dist/default/production\mani.X.production.o
 __Lspace_0 0 0 ABS 0 - dist/default/production\mani.X.production.o
 __Lspace_1 0 0 ABS 0 - dist/default/production\mani.X.production.o
@@ -1743,6 +1750,7 @@ I2C_Write@data 1 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.producti
 _PIR1bits F9E 0 ABS 0 - dist/default/production\mani.X.production.o
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production\mani.X.production.o
 ___fltol@exp1 46 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
+_estado_alarma EA 0 BANK0 1 bssBANK0 dist/default/production\mani.X.production.o
 end_of_initialization 2374 0 CODE 0 cinit dist/default/production\mani.X.production.o
 humStr@buf 4B 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 humStr@num 47 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
@@ -1750,17 +1758,17 @@ MQ135_LeerADC@i 26 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.produc
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production\mani.X.production.o
 __Hintentry 0 0 ABS 0 intentry dist/default/production\mani.X.production.o
 MQ135_calcularRs@adc 56 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
-powf@ax 170 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@hx 160 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@hy 17C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@is 190 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@ix 1A4 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@iy 18C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@s2 188 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@t1 184 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@t2 110 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@sn 15C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-powf@y1 120 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@ax 178 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@hx 168 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@hy 188 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@is 194 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@ix 1AC 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@iy 19C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@s2 190 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@t1 18C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@t2 118 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@sn 164 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+powf@y1 12C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
 __end_of_BME280_WriteReg 24E4 0 CODE 0 text36 dist/default/production\mani.X.production.o
 ___awdiv@quotient 7 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 ?___awdiv 1 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
@@ -1841,7 +1849,7 @@ __Ltext48 0 0 ABS 0 text48 dist/default/production\mani.X.production.o
 __Ltext49 0 0 ABS 0 text49 dist/default/production\mani.X.production.o
 __Ltext50 0 0 ABS 0 text50 dist/default/production\mani.X.production.o
 __Ltext51 0 0 ABS 0 text51 dist/default/production\mani.X.production.o
-__ramtop 800 0 RAM 0 ramtop C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+__ramtop 800 0 RAM 0 ramtop C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 BME280_ReadHumidity@lsb 8A 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
 BME280_ReadHumidity@msb 89 0 BANK0 1 cstackBANK0 dist/default/production\mani.X.production.o
 ?_scalbnf 3D 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
@@ -1859,25 +1867,27 @@ scalbnf@u 47 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 scalbnf@x 3D 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 scalbnf@y 4B 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
 _floatStr 370C 0 CODE 0 text8 dist/default/production\mani.X.production.o
-___heap_hi 0 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-___heap_lo 0 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+___heap_hi 0 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+___heap_lo 0 0 ABS 0 - C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 ___fltol@f1 3D 0 COMRAM 1 cstackCOMRAM dist/default/production\mani.X.production.o
-_powf$1826 140 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1827 150 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1828 144 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1829 194 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1830 130 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1831 100 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1832 104 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1833 154 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1835 134 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1836 108 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1837 10C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1838 13C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
-_powf$1839 128 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1976 148 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1977 158 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1978 14C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1979 198 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1980 138 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1981 108 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1982 10C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1983 15C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1984 140 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1985 13C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1986 110 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1987 114 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1988 100 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1989 104 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
+_powf$1990 11C 0 BANK1 1 cstackBANK1 dist/default/production\mani.X.production.o
 ___param_bank 0 0 ABS 0 - dist/default/production\mani.X.production.o
-___intlo_stack_hi 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
-___intlo_stack_lo 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+___intlo_stack_hi 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
+___intlo_stack_lo 0 0 STACK 2 stack C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
 __Hbigdata 0 0 BIGRAM 1 bigdata dist/default/production\mani.X.production.o
 __end_of__initialization 2374 0 CODE 0 cinit dist/default/production\mani.X.production.o
 _BME280_ReadHumidity 53AA 0 CODE 0 text32 dist/default/production\mani.X.production.o
@@ -2024,8 +2034,8 @@ text49 0 2340 2340 12 1
 text50 0 232E 232E 12 1
 text51 0 23F4 23F4 24 1
 cstackCOMRAM 1 1 1 5F 1
-cstackBANK0 1 60 60 8B 1
-cstackBANK1 1 100 100 B0 1
+cstackBANK0 1 60 60 91 1
+cstackBANK1 1 100 100 B8 1
 init 0 7FFC 7FFC 4 1
 reset_vec 0 0 0 4 1
 mediumconst 0 7D80 7D80 27C 1

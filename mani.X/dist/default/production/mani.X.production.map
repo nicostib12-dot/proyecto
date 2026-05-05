@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:\Program Files\Microchip\xc8\v3.10\pic\dat\20250813170317_en.msgs \
   -cn -h+dist/default/production\mani.X.production.sym \
   --cmf=dist/default/production\mani.X.production.cmf -z -Q18F4550 \
-  -oC:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_3.o \
+  -oC:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/mani.X.production.map \
-  --md=C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_0.dat -E1 \
+  --md=C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0800h-08FFhx120 -AMEDIUMCONST=0800h-07FFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-07FFh -ABIGRAM=01h-07FFh -ARAM=060h-0FFh,0100h-01FFhx7 \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o \
+  C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o \
   dist/default/production\mani.X.production.o 
 
 Object code version is 3.11
@@ -35,7 +35,7 @@ Machine type is 18F4550
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\david\AppData\Local\Temp\xcAs186k.0\driver_tmp_9.o
+C:\Users\david\AppData\Local\Temp\xcAsa2s.0\driver_tmp_9.o
                 config                           300000   300000        8        0       4
                 init                               7FFC     7FFC        4     3FFE       0
                 reset_vec                             0        0        4        0       0
@@ -96,8 +96,8 @@ dist/default/production\mani.X.production.o
                 text0                              40C6     40C6      29E     2063       0
                 cstackCOMRAM                          1        1       5F        1       1
                 cstackBANK0                          60       60       76       60       1
-                cstackBANK1                         100      100       B0      100       1
-                bssBANK0                             D6       D6       15       60       1
+                cstackBANK1                         100      100       B8      100       1
+                bssBANK0                             D6       D6       1B       60       1
                 cinit                              2368     2368       16     11B4       0
 
 TOTAL           Name                               Link     Load   Length     Space
@@ -176,10 +176,10 @@ TOTAL           Name                               Link     Load   Length     Sp
 
         CLASS   BANK0          
                 cstackBANK0                          60       60       76         1
-                bssBANK0                             D6       D6       15         1
+                bssBANK0                             D6       D6       1B         1
 
         CLASS   BANK1          
-                cstackBANK1                         100      100       B0         1
+                cstackBANK1                         100      100       B8         1
 
         CLASS   BANK2          
 
@@ -216,8 +216,8 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  00005F  000060         1       1  COMRAM  
-                cstackBANK0                    000060  00008B  0000EB        60       1  BANK0   
-                cstackBANK1                    000100  0000B0  0001B0       100       1  BANK1   
+                cstackBANK0                    000060  000091  0000F1        60       1  BANK0   
+                cstackBANK1                    000100  0000B8  0001B8       100       1  BANK1   
                 text50                         00232E  000012  002340      1197       0  CODE    
                 text49                         002340  000012  002352      11A0       0  CODE    
                 text31                         002352  000016  002368      11A9       0  CODE    
@@ -278,16 +278,16 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
-        BANK0            0000EB-0000FF               15
-        BANK1            0001B0-0001FF               50
+        BANK0            0000F1-0000FF                F
+        BANK1            0001B8-0001FF               48
         BANK2            000200-0002FF              100
         BANK3            000300-0003FF              100
         BANK4            000400-0004FF              100
         BANK5            000500-0005FF              100
         BANK6            000600-0006FF              100
         BANK7            000700-0007FF              100
-        BIGRAM           0000EB-0000FF               15
-                         0001B0-0007FF              650
+        BIGRAM           0000F1-0000FF                F
+                         0001B8-0007FF              648
         BIGSFR           000F60-000FFF               A0
         CODE             000004-00232D             232A
         CONFIG           300008-30000D                6
@@ -295,8 +295,8 @@ UNUSED ADDRESS RANGES
         EEDATA           F00000-F000FF              100
         IDLOC            200000-200007                8
         MEDIUMCONST      000800-00232D             1B2E
-        RAM              0000EB-0000FF               15
-                         0001B0-0007FF              100
+        RAM              0000F1-0000FF                F
+                         0001B8-0007FF              100
         SFR              000F60-000FFF               A0
         SMALLCONST       000800-00232D              100
 
@@ -393,15 +393,15 @@ _BH1750_LeerBytes               text45       0027AE
 _BH1750_ReadLux                 text41       0032DE
 _BH1750_SendCmd                 text47       002418
 _BME280_CalcularTFine           text33       003E4E
-_BME280_CalcularTFine$1820      cstackCOMRAM 000028
+_BME280_CalcularTFine$1970      cstackCOMRAM 000028
 _BME280_Init                    text35       002906
 _BME280_LeerCalibracion         text37       002D16
 _BME280_ReadHumidity            text32       0053AA
-_BME280_ReadHumidity$1821       cstackBANK0  00008B
-_BME280_ReadHumidity$1822       cstackBANK0  000079
-_BME280_ReadHumidity$1823       cstackBANK0  00007D
-_BME280_ReadHumidity$1824       cstackBANK0  000081
-_BME280_ReadHumidity$1825       cstackBANK0  000085
+_BME280_ReadHumidity$1971       cstackBANK0  00008B
+_BME280_ReadHumidity$1972       cstackBANK0  000079
+_BME280_ReadHumidity$1973       cstackBANK0  00007D
+_BME280_ReadHumidity$1974       cstackBANK0  000081
+_BME280_ReadHumidity$1975       cstackBANK0  000085
 _BME280_ReadInt16               text39       002464
 _BME280_ReadReg                 text40       002620
 _BME280_ReadUInt16              text38       00248E
@@ -411,10 +411,11 @@ _I2C_Init                       text31       002352
 _I2C_Start                      text50       00232E
 _I2C_Stop                       text49       002340
 _I2C_Write                      text48       00237E
+_LATDbits                       (abs)        000F8C
 _MQ135_Init                     text30       002556
 _MQ135_LeerADC                  text28       002AF0
 _MQ135_calcularPPM              text20       003A5E
-_MQ135_calcularPPM$1819         cstackBANK0  000071
+_MQ135_calcularPPM$1969         cstackBANK0  000071
 _MQ135_calcularRs               text19       002FCA
 _OLED_Clear                     text15       00251C
 _OLED_Cmd                       text17       0023B8
@@ -436,6 +437,7 @@ _SSPSTATbits                    (abs)        000FC7
 _TRISAbits                      (abs)        000F92
 _TRISB0                         (abs)        007C98
 _TRISB1                         (abs)        007C99
+_TRISDbits                      (abs)        000F95
 _UCFG                           (abs)        000F6F
 _UCON                           (abs)        000F6D
 __HRAM                          (abs)        000000
@@ -498,7 +500,7 @@ __Hsivt_hi                      sivt_hi      000000
 __Hsivt_lo                      sivt_lo      000018
 __Hsmallconst                   smallconst   000000
 __Hspace_0                      (abs)        008000
-__Hspace_1                      (abs)        0001B0
+__Hspace_1                      (abs)        0001B8
 __Hspace_2                      (abs)        000000
 __Hspace_4                      (abs)        600008
 __Hstack                        stack        000000
@@ -677,7 +679,7 @@ __Ltext7                        text7        000000
 __Ltext8                        text8        000000
 __Ltext9                        text9        000000
 __S0                            (abs)        008000
-__S1                            (abs)        0001B0
+__S1                            (abs)        0001B8
 __S4                            (abs)        000000
 __S5                            (abs)        000000
 ___awdiv                        text11       002C56
@@ -712,10 +714,10 @@ ___flge@ff1                     cstackCOMRAM 000024
 ___flge@ff2                     cstackCOMRAM 000028
 ___flmul                        text24       004ACE
 ___flmul@a                      cstackCOMRAM 000028
-___flmul@aexp                   cstackCOMRAM 000031
+___flmul@aexp                   cstackCOMRAM 000035
 ___flmul@b                      cstackCOMRAM 000024
 ___flmul@bexp                   cstackCOMRAM 000036
-___flmul@grs                    cstackCOMRAM 000032
+___flmul@grs                    cstackCOMRAM 000031
 ___flmul@prod                   cstackCOMRAM 000037
 ___flmul@sign                   cstackCOMRAM 000030
 ___flmul@temp                   cstackCOMRAM 00003B
@@ -908,18 +910,22 @@ __ptext9                        text9        0030D0
 __ramtop                        ramtop       000800
 __smallconst                    mediumconst  007D80
 _bp                             mediumconst  007F6C
-_dig_H1                         bssBANK0     0000EA
+_dig_H1                         bssBANK0     0000F0
 _dig_H2                         bssBANK0     0000E0
-_dig_H3                         bssBANK0     0000E9
+_dig_H3                         bssBANK0     0000EF
 _dig_H4                         bssBANK0     0000DE
 _dig_H5                         bssBANK0     0000DC
-_dig_H6                         bssBANK0     0000E8
+_dig_H6                         bssBANK0     0000EE
 _dig_T1                         bssBANK0     0000E6
 _dig_T2                         bssBANK0     0000E4
 _dig_T3                         bssBANK0     0000E2
 _dp_h                           mediumconst  007F64
 _dp_l                           mediumconst  007F5C
 _errno                          bssBANK0     0000DA
+_estado_alarma                  bssBANK0     0000EA
+_estado_calentador              bssBANK0     0000ED
+_estado_led                     bssBANK0     0000EB
+_estado_ventilador              bssBANK0     0000EC
 _floatStr                       text8        00370C
 _font5x8                        mediumconst  007D81
 _humStr                         text7        0033F2
@@ -928,23 +934,27 @@ _leer_adc_raw                   text6        00243E
 _luxStr                         text2        00357E
 _main                           text0        0040C6
 _powf                           text21       0058DE
-_powf$1826                      cstackBANK1  000140
-_powf$1827                      cstackBANK1  000150
-_powf$1828                      cstackBANK1  000144
-_powf$1829                      cstackBANK1  000194
-_powf$1830                      cstackBANK1  000130
-_powf$1831                      cstackBANK1  000100
-_powf$1832                      cstackBANK1  000104
-_powf$1833                      cstackBANK1  000154
-_powf$1835                      cstackBANK1  000134
-_powf$1836                      cstackBANK1  000108
-_powf$1837                      cstackBANK1  00010C
-_powf$1838                      cstackBANK1  00013C
-_powf$1839                      cstackBANK1  000128
+_powf$1976                      cstackBANK1  000148
+_powf$1977                      cstackBANK1  000158
+_powf$1978                      cstackBANK1  00014C
+_powf$1979                      cstackBANK1  000198
+_powf$1980                      cstackBANK1  000138
+_powf$1981                      cstackBANK1  000108
+_powf$1982                      cstackBANK1  00010C
+_powf$1983                      cstackBANK1  00015C
+_powf$1984                      cstackBANK1  000140
+_powf$1985                      cstackBANK1  00013C
+_powf$1986                      cstackBANK1  000110
+_powf$1987                      cstackBANK1  000114
+_powf$1988                      cstackBANK1  000100
+_powf$1989                      cstackBANK1  000104
+_powf$1990                      cstackBANK1  00011C
 _ppmStr                         text1        002DDE
 _scalbnf                        text23       003C1C
 _sqrtf                          text22       0046F2
 _t_fine                         bssBANK0     0000D6
+_vent_por_aire                  bssBANK0     0000E8
+_vent_por_humedad               bssBANK0     0000E9
 end_of_initialization           cinit        002374
 floatStr@buf                    cstackCOMRAM 00004B
 floatStr@decimal                cstackCOMRAM 00004D
@@ -974,48 +984,48 @@ luxStr@lux                      cstackCOMRAM 000047
 luxStr@val                      cstackCOMRAM 00004D
 main@adc_mq                     cstackBANK0  0000C1
 main@bme_ok                     cstackBANK0  0000D5
-main@bufHum                     cstackBANK0  0000A9
-main@bufLux                     cstackBANK0  0000B3
-main@bufPPM                     cstackBANK0  0000A1
+main@bufHum                     cstackBANK0  0000A1
+main@bufLux                     cstackBANK0  0000AB
+main@bufPPM                     cstackBANK0  0000B5
 main@bufTemp                    cstackBANK0  000097
 main@hum                        cstackBANK0  0000CD
 main@lux                        cstackBANK0  0000D1
 main@ppm                        cstackBANK0  0000C9
 main@rs                         cstackBANK0  0000C5
 main@temp                       cstackBANK0  0000BD
-powf@ax                         cstackBANK1  000170
-powf@hx                         cstackBANK1  000160
-powf@hy                         cstackBANK1  00017C
-powf@i                          cstackBANK1  00011C
-powf@is                         cstackBANK1  000190
-powf@ix                         cstackBANK1  0001A4
-powf@iy                         cstackBANK1  00018C
-powf@j                          cstackBANK1  0001A0
-powf@k                          cstackBANK1  00019C
-powf@n                          cstackBANK1  000180
-powf@p_h                        cstackBANK1  000198
-powf@p_l                        cstackBANK1  000164
-powf@r                          cstackBANK1  000148
-powf@s                          cstackBANK1  000158
-powf@s2                         cstackBANK1  000188
-powf@s_h                        cstackBANK1  00016C
-powf@s_l                        cstackBANK1  000124
-powf@sn                         cstackBANK1  00015C
-powf@t                          cstackBANK1  0001A8
-powf@t1                         cstackBANK1  000184
-powf@t2                         cstackBANK1  000110
-powf@t_h                        cstackBANK1  000168
-powf@t_l                        cstackBANK1  00012C
-powf@u                          cstackBANK1  000174
-powf@v                          cstackBANK1  000178
-powf@w                          cstackBANK1  000138
+powf@ax                         cstackBANK1  000178
+powf@hx                         cstackBANK1  000168
+powf@hy                         cstackBANK1  000188
+powf@i                          cstackBANK1  000128
+powf@is                         cstackBANK1  000194
+powf@ix                         cstackBANK1  0001AC
+powf@iy                         cstackBANK1  00019C
+powf@j                          cstackBANK1  0001A8
+powf@k                          cstackBANK1  0001A4
+powf@n                          cstackBANK1  000184
+powf@p_h                        cstackBANK1  0001A0
+powf@p_l                        cstackBANK1  00016C
+powf@r                          cstackBANK1  000150
+powf@s                          cstackBANK1  000160
+powf@s2                         cstackBANK1  000190
+powf@s_h                        cstackBANK1  000174
+powf@s_l                        cstackBANK1  000130
+powf@sn                         cstackBANK1  000164
+powf@t                          cstackBANK1  0001B0
+powf@t1                         cstackBANK1  00018C
+powf@t2                         cstackBANK1  000118
+powf@t_h                        cstackBANK1  000170
+powf@t_l                        cstackBANK1  000134
+powf@u                          cstackBANK1  00017C
+powf@v                          cstackBANK1  000180
+powf@w                          cstackBANK1  000144
 powf@x                          cstackCOMRAM 000056
 powf@y                          cstackCOMRAM 00005A
-powf@y1                         cstackBANK1  000120
-powf@yisint                     cstackBANK1  00014C
-powf@z                          cstackBANK1  0001AC
-powf@z_h                        cstackBANK1  000114
-powf@z_l                        cstackBANK1  000118
+powf@y1                         cstackBANK1  00012C
+powf@yisint                     cstackBANK1  000154
+powf@z                          cstackBANK1  0001B4
+powf@z_h                        cstackBANK1  000120
+powf@z_l                        cstackBANK1  000124
 ppmStr@buf                      cstackCOMRAM 000049
 ppmStr@i                        cstackCOMRAM 00004A
 ppmStr@ppm                      cstackCOMRAM 000047

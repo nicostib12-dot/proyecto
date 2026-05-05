@@ -101,6 +101,14 @@
 [v ___omul __omul `(uo  1 e 8 0 ]
 "10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"30 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\control.c
+[v _Control_Temperatura Control_Temperatura `(v  1 e 1 0 ]
+"46
+[v _Control_Humedad Control_Humedad `(v  1 e 1 0 ]
+"55
+[v _Control_Aire Control_Aire `(v  1 e 1 0 ]
+"72
+[v _Control_Luz Control_Luz `(v  1 e 1 0 ]
 "3 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\i2c.c
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
 "13
@@ -171,6 +179,27 @@
 [v _UCON UCON `VEuc  1 e 1 @3949 ]
 "763
 [v _UCFG UCFG `VEuc  1 e 1 @3951 ]
+[s S894 . 1 `uc 1 LATD0 1 0 :1:0 
+`uc 1 LATD1 1 0 :1:1 
+`uc 1 LATD2 1 0 :1:2 
+`uc 1 LATD3 1 0 :1:3 
+`uc 1 LATD4 1 0 :1:4 
+`uc 1 LATD5 1 0 :1:5 
+`uc 1 LATD6 1 0 :1:6 
+`uc 1 LATD7 1 0 :1:7 
+]
+"3290
+[s S903 . 1 `uc 1 LD0 1 0 :1:0 
+`uc 1 LD1 1 0 :1:1 
+`uc 1 LD2 1 0 :1:2 
+`uc 1 LD3 1 0 :1:3 
+`uc 1 LD4 1 0 :1:4 
+`uc 1 LD5 1 0 :1:5 
+`uc 1 LD6 1 0 :1:6 
+`uc 1 LD7 1 0 :1:7 
+]
+[u S912 . 1 `S894 1 . 1 0 `S903 1 . 1 0 ]
+[v _LATDbits LATDbits `VES912  1 e 1 @3980 ]
 [s S307 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
@@ -190,6 +219,27 @@
 ]
 [u S323 . 1 `S307 1 . 1 0 `S315 1 . 1 0 ]
 [v _TRISAbits TRISAbits `VES323  1 e 1 @3986 ]
+[s S854 . 1 `uc 1 TRISD0 1 0 :1:0 
+`uc 1 TRISD1 1 0 :1:1 
+`uc 1 TRISD2 1 0 :1:2 
+`uc 1 TRISD3 1 0 :1:3 
+`uc 1 TRISD4 1 0 :1:4 
+`uc 1 TRISD5 1 0 :1:5 
+`uc 1 TRISD6 1 0 :1:6 
+`uc 1 TRISD7 1 0 :1:7 
+]
+"4033
+[s S863 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+[u S872 . 1 `S854 1 . 1 0 `S863 1 . 1 0 ]
+[v _TRISDbits TRISDbits `VES872  1 e 1 @3989 ]
 [s S186 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -371,15 +421,27 @@
 [v _dp_h dp_h `C[2]f  1 s 8 dp_h ]
 "22
 [v _dp_l dp_l `C[2]f  1 s 8 dp_l ]
+"3 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\control.c
+[v _estado_calentador estado_calentador `uc  1 s 1 estado_calentador ]
+"4
+[v _estado_ventilador estado_ventilador `uc  1 s 1 estado_ventilador ]
+"5
+[v _estado_led estado_led `uc  1 s 1 estado_led ]
+"6
+[v _estado_alarma estado_alarma `uc  1 s 1 estado_alarma ]
+"8
+[v _vent_por_humedad vent_por_humedad `uc  1 s 1 vent_por_humedad ]
+"9
+[v _vent_por_aire vent_por_aire `uc  1 s 1 vent_por_aire ]
 "83 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\man.c
 [v _main main `(v  1 e 1 0 ]
 {
 "104
-[v main@bufLux bufLux `[10]uc  1 a 10 83 ]
-[v main@bufHum bufHum `[10]uc  1 a 10 73 ]
+[v main@bufLux bufLux `[10]uc  1 a 10 75 ]
+[v main@bufHum bufHum `[10]uc  1 a 10 65 ]
 "103
 [v main@bufTemp bufTemp `[10]uc  1 a 10 55 ]
-[v main@bufPPM bufPPM `[8]uc  1 a 8 65 ]
+[v main@bufPPM bufPPM `[8]uc  1 a 8 85 ]
 "102
 [v main@lux lux `f  1 a 4 113 ]
 [v main@hum hum `f  1 a 4 109 ]
@@ -601,60 +663,59 @@
 [v _powf powf `JJ(f  1 e 4 0 ]
 {
 "203
-[v powf@s2 s2 `f  1 a 4 136 ]
-[u S1441 fui 4 `f 1 f 4 0 `ul 1 u 4 0 `l 1 i 4 0 ]
+[v powf@s2 s2 `f  1 a 4 144 ]
+[u S1565 fui 4 `f 1 f 4 0 `ul 1 u 4 0 `l 1 i 4 0 ]
 "202
-[v powf@s_h s_h `S1441  1 a 4 108 ]
-[v powf@t_h t_h `S1441  1 a 4 104 ]
+[v powf@s_h s_h `S1565  1 a 4 116 ]
+[v powf@t_h t_h `S1565  1 a 4 112 ]
 "203
-[v powf@t_l t_l `f  1 a 4 44 ]
-[v powf@s_l s_l `f  1 a 4 36 ]
-[u S1441 fui 4 `f 1 f 4 0 `ul 1 u 4 0 `l 1 i 4 0 ]
+[v powf@t_l t_l `f  1 a 4 52 ]
+[v powf@s_l s_l `f  1 a 4 48 ]
+[u S1565 fui 4 `f 1 f 4 0 `ul 1 u 4 0 `l 1 i 4 0 ]
 "65
-[v powf@z z `S1441  1 a 4 172 ]
-[v powf@t t `S1441  1 a 4 168 ]
-[v powf@ix ix `S1441  1 a 4 164 ]
+[v powf@z z `S1565  1 a 4 180 ]
+[v powf@t t `S1565  1 a 4 176 ]
+[v powf@ix ix `S1565  1 a 4 172 ]
 "59
-[v powf@j j `l  1 a 4 160 ]
-[v powf@k k `l  1 a 4 156 ]
+[v powf@j j `l  1 a 4 168 ]
+[v powf@k k `l  1 a 4 164 ]
 "65
-[v powf@p_h p_h `S1441  1 a 4 152 ]
-[v powf@is is `S1441  1 a 4 144 ]
+[v powf@p_h p_h `S1565  1 a 4 160 ]
 "59
-[v powf@iy iy `l  1 a 4 140 ]
+[v powf@iy iy `l  1 a 4 156 ]
 "65
-[v powf@t1 t1 `S1441  1 a 4 132 ]
+[v powf@is is `S1565  1 a 4 148 ]
+[v powf@t1 t1 `S1565  1 a 4 140 ]
+[v powf@hy hy `S1565  1 a 4 136 ]
 "59
-[v powf@n n `l  1 a 4 128 ]
-"65
-[v powf@hy hy `S1441  1 a 4 124 ]
+[v powf@n n `l  1 a 4 132 ]
 "58
-[v powf@v v `f  1 a 4 120 ]
-[v powf@u u `f  1 a 4 116 ]
+[v powf@v v `f  1 a 4 128 ]
+[v powf@u u `f  1 a 4 124 ]
 "65
-[v powf@ax ax `S1441  1 a 4 112 ]
+[v powf@ax ax `S1565  1 a 4 120 ]
 "57
-[v powf@p_l p_l `f  1 a 4 100 ]
+[v powf@p_l p_l `f  1 a 4 108 ]
 "65
-[v powf@hx hx `S1441  1 a 4 96 ]
+[v powf@hx hx `S1565  1 a 4 104 ]
 "61
-[v powf@sn sn `ul  1 a 4 92 ]
+[v powf@sn sn `ul  1 a 4 100 ]
 "58
-[v powf@s s `f  1 a 4 88 ]
+[v powf@s s `f  1 a 4 96 ]
 "59
-[v powf@yisint yisint `l  1 a 4 76 ]
+[v powf@yisint yisint `l  1 a 4 84 ]
 "58
-[v powf@r r `f  1 a 4 72 ]
-[v powf@w w `f  1 a 4 56 ]
+[v powf@r r `f  1 a 4 80 ]
+[v powf@w w `f  1 a 4 68 ]
 "65
-[v powf@y1 y1 `S1441  1 a 4 32 ]
+[v powf@y1 y1 `S1565  1 a 4 44 ]
 "59
-[v powf@i i `l  1 a 4 28 ]
+[v powf@i i `l  1 a 4 40 ]
 "57
-[v powf@z_l z_l `f  1 a 4 24 ]
-[v powf@z_h z_h `f  1 a 4 20 ]
+[v powf@z_l z_l `f  1 a 4 36 ]
+[v powf@z_h z_h `f  1 a 4 32 ]
 "58
-[v powf@t2 t2 `f  1 a 4 16 ]
+[v powf@t2 t2 `f  1 a 4 24 ]
 "55
 [v powf@x x `f  1 p 4 85 ]
 [v powf@y y `f  1 p 4 89 ]
@@ -663,9 +724,9 @@
 "24 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sqrtf.c
 [v _sqrtf sqrtf `(f  1 e 4 0 ]
 {
-[u S1564 . 4 `f 1 f 4 0 `l 1 i 4 0 ]
+[u S1688 . 4 `f 1 f 4 0 `l 1 i 4 0 ]
 "29
-[v sqrtf@ix ix `S1564  1 a 4 33 ]
+[v sqrtf@ix ix `S1688  1 a 4 33 ]
 "28
 [v sqrtf@r r `ul  1 a 4 29 ]
 "27
@@ -683,9 +744,9 @@
 {
 "7
 [v scalbnf@y y `f  1 a 4 74 ]
-[u S1554 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1678 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v scalbnf@u u `S1554  1 a 4 70 ]
+[v scalbnf@u u `S1678  1 a 4 70 ]
 "4
 [v scalbnf@x x `f  1 p 4 60 ]
 [v scalbnf@n n `i  1 p 2 64 ]
@@ -694,21 +755,21 @@
 "8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S1306 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1430 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S1311 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S1314 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1306 1 fAsBytes 4 0 `S1311 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S1314  1 a 4 54 ]
+[s S1435 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1438 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1430 1 fAsBytes 4 0 `S1435 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1438  1 a 4 54 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 49 ]
-[s S1382 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 48 ]
+[s S1506 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1385 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1382 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1385  1 a 2 58 ]
+[u S1509 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1506 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1509  1 a 2 58 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 53 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 48 ]
+[v ___flmul@aexp aexp `uc  1 a 1 52 ]
 "9
 [v ___flmul@sign sign `uc  1 a 1 47 ]
 "8
