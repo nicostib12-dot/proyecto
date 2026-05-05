@@ -8,6 +8,7 @@
       <itemPath>ssd1306.h</itemPath>
       <itemPath>font5x8.h</itemPath>
       <itemPath>lm35.h</itemPath>
+      <itemPath>mq135.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -25,6 +26,7 @@
       <itemPath>i2c.c</itemPath>
       <itemPath>ssd1306.c</itemPath>
       <itemPath>lm35.c</itemPath>
+      <itemPath>mq135.c</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

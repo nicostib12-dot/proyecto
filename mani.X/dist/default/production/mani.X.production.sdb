@@ -25,6 +25,8 @@
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
 "62 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\float.c
 [v ___ftpack __ftpack `(f  1 e 4 0 ]
 "43 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fltol.c
@@ -51,6 +53,10 @@
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"55 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\powf.c
+[v _powf powf `JJ(f  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\scalbnf.c
+[v _scalbnf scalbnf `(f  1 e 4 0 ]
 "10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -59,6 +65,8 @@
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"24 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sqrtf.c
+[v _sqrtf sqrtf `(f  1 e 4 0 ]
 "15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\Umul24.c
@@ -83,10 +91,22 @@
 [v _leer_adc_raw leer_adc_raw `(ui  1 s 2 leer_adc_raw ]
 "33
 [v _leerTemperatura leerTemperatura `(f  1 e 4 0 ]
-"20 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\man.c
-[v _tempToStr tempToStr `(v  1 e 1 0 ]
-"37
+"24 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\man.c
+[v _floatStr floatStr `(v  1 e 1 0 ]
+"40
+[v _ppmStr ppmStr `(v  1 e 1 0 ]
+"51
 [v _main main `(v  1 e 1 0 ]
+"8 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\mq135.c
+[v _MQ135_Init MQ135_Init `(v  1 e 1 0 ]
+"29
+[v _MQ135_LeerADC MQ135_LeerADC `(f  1 e 4 0 ]
+"59
+[v _MQ135_calcularRs MQ135_calcularRs `(f  1 e 4 0 ]
+"86
+[v _MQ135_calcularPPM MQ135_calcularPPM `(f  1 e 4 0 ]
+"115
+[v _MQ135_calibrarR0 MQ135_calibrarR0 `(f  1 e 4 0 ]
 "5 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\ssd1306.c
 [v _OLED_Cmd OLED_Cmd `(v  1 s 1 OLED_Cmd ]
 "13
@@ -107,7 +127,7 @@
 [v _UCON UCON `VEuc  1 e 1 @3949 ]
 "763
 [v _UCFG UCFG `VEuc  1 e 1 @3951 ]
-[s S242 . 1 `uc 1 TRISA0 1 0 :1:0 
+[s S283 . 1 `uc 1 TRISA0 1 0 :1:0 
 `uc 1 TRISA1 1 0 :1:1 
 `uc 1 TRISA2 1 0 :1:2 
 `uc 1 TRISA3 1 0 :1:3 
@@ -116,7 +136,7 @@
 `uc 1 TRISA6 1 0 :1:6 
 ]
 "3457
-[s S250 . 1 `uc 1 RA0 1 0 :1:0 
+[s S291 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -124,9 +144,9 @@
 `uc 1 RA5 1 0 :1:5 
 `uc 1 RA6 1 0 :1:6 
 ]
-[u S258 . 1 `S242 1 . 1 0 `S250 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES258  1 e 1 @3986 ]
-[s S121 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S299 . 1 `S283 1 . 1 0 `S291 1 . 1 0 ]
+[v _TRISAbits TRISAbits `VES299  1 e 1 @3986 ]
+[s S162 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -136,14 +156,14 @@
 `uc 1 SPPIF 1 0 :1:7 
 ]
 "4492
-[s S130 . 1 `uc 1 . 1 0 :4:0 
+[s S171 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TX1IF 1 0 :1:4 
 `uc 1 RC1IF 1 0 :1:5 
 `uc 1 . 1 0 :1:6 
 `uc 1 PSPIF 1 0 :1:7 
 ]
-[u S136 . 1 `S121 1 . 1 0 `S130 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES136  1 e 1 @3998 ]
+[u S177 . 1 `S162 1 . 1 0 `S171 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES177  1 e 1 @3998 ]
 "5587
 [v _CMCON CMCON `VEuc  1 e 1 @4020 ]
 "6510
@@ -152,45 +172,45 @@
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "6666
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S283 . 1 `uc 1 . 1 0 :1:0 
+[s S324 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "6710
-[s S286 . 1 `uc 1 ADON 1 0 :1:0 
+[s S327 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :4:2 
 ]
-[s S290 . 1 `uc 1 . 1 0 :1:0 
+[s S331 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
 `uc 1 CHS2 1 0 :1:4 
 `uc 1 CHS3 1 0 :1:5 
 ]
-[s S297 . 1 `uc 1 . 1 0 :1:0 
+[s S338 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S300 . 1 `uc 1 . 1 0 :1:0 
+[s S341 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[s S303 . 1 `uc 1 . 1 0 :1:0 
+[s S344 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S306 . 1 `uc 1 . 1 0 :1:0 
+[s S347 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S309 . 1 `uc 1 . 1 0 :1:0 
+[s S350 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S312 . 1 `S283 1 . 1 0 `S286 1 . 1 0 `S290 1 . 1 0 `S297 1 . 1 0 `S300 1 . 1 0 `S303 1 . 1 0 `S306 1 . 1 0 `S309 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES312  1 e 1 @4034 ]
+[u S353 . 1 `S324 1 . 1 0 `S327 1 . 1 0 `S331 1 . 1 0 `S338 1 . 1 0 `S341 1 . 1 0 `S344 1 . 1 0 `S347 1 . 1 0 `S350 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES353  1 e 1 @4034 ]
 "6792
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "6799
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
 "6806
 [v _SSPCON2 SSPCON2 `VEuc  1 e 1 @4037 ]
-[s S155 . 1 `uc 1 SEN 1 0 :1:0 
+[s S196 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -200,8 +220,8 @@
 `uc 1 GCEN 1 0 :1:7 
 ]
 "6823
-[u S164 . 1 `S155 1 . 1 0 ]
-[v _SSPCON2bits SSPCON2bits `VES164  1 e 1 @4037 ]
+[u S205 . 1 `S196 1 . 1 0 ]
+[v _SSPCON2bits SSPCON2bits `VES205  1 e 1 @4037 ]
 "6868
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
 "6938
@@ -233,68 +253,101 @@
 [v _TRISB0 TRISB0 `VEb  1 e 0 @31896 ]
 "10909
 [v _TRISB1 TRISB1 `VEb  1 e 0 @31897 ]
-"37 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\man.c
+"3 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\errno.c
+[v _errno errno `i  1 e 2 0 ]
+"20 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\powf.c
+[v _bp bp `C[2]f  1 s 8 bp ]
+"21
+[v _dp_h dp_h `C[2]f  1 s 8 dp_h ]
+"22
+[v _dp_l dp_l `C[2]f  1 s 8 dp_l ]
+"51 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\man.c
 [v _main main `(v  1 e 1 0 ]
 {
-"52
-[v main@buf buf `[10]uc  1 a 10 74 ]
-"51
-[v main@temp temp `f  1 a 4 86 ]
-"53
-[v main@estado estado `*.32uc  1 a 2 84 ]
+"75
+[v main@bufR0 bufR0 `[10]uc  1 a 10 41 ]
+"71
+[v main@bufTemp bufTemp `[10]uc  1 a 10 31 ]
+"72
+[v main@bufPPM bufPPM `[8]uc  1 a 8 51 ]
 "74
+[v main@r0_real r0_real `f  1 a 4 59 ]
+"108
 } 0
-"20
-[v _tempToStr tempToStr `(v  1 e 1 0 ]
+"40
+[v _ppmStr ppmStr `(v  1 e 1 0 ]
 {
-"21
-[v tempToStr@i i `uc  1 a 1 66 ]
-[v tempToStr@entero entero `uc  1 a 1 65 ]
-[v tempToStr@decimal decimal `uc  1 a 1 64 ]
-"20
-[v tempToStr@num num `f  1 p 4 59 ]
-[v tempToStr@buf buf `*.30uc  1 p 1 63 ]
+"41
+[v ppmStr@i i `uc  1 a 1 73 ]
+"40
+[v ppmStr@ppm ppm `ui  1 p 2 70 ]
+[v ppmStr@buf buf `*.30uc  1 p 1 72 ]
+"49
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___lwmod@dividend dividend `ui  1 p 2 0 ]
+[v ___lwmod@divisor divisor `ui  1 p 2 2 ]
+"25
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 9 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 11 ]
+"7
+[v ___lwdiv@dividend dividend `ui  1 p 2 5 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 7 ]
+"30
+} 0
+"33 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\lm35.c
+[v _leerTemperatura leerTemperatura `(f  1 e 4 0 ]
+{
+"34
+[v leerTemperatura@suma suma `ul  1 a 4 10 ]
+"38
+[v leerTemperatura@temperatura temperatura `f  1 a 4 4 ]
+"37
+[v leerTemperatura@voltaje_mV voltaje_mV `f  1 a 4 0 ]
+"36
+[v leerTemperatura@promedio promedio `ui  1 a 2 8 ]
 "35
+[v leerTemperatura@i i `uc  1 a 1 14 ]
+"55
+} 0
+"21
+[v _leer_adc_raw leer_adc_raw `(ui  1 s 2 leer_adc_raw ]
+{
+"31
+} 0
+"24 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\man.c
+[v _floatStr floatStr `(v  1 e 1 0 ]
+{
+"25
+[v floatStr@i i `uc  1 a 1 78 ]
+[v floatStr@entero entero `uc  1 a 1 77 ]
+[v floatStr@decimal decimal `uc  1 a 1 76 ]
+"24
+[v floatStr@num num `f  1 p 4 70 ]
+[v floatStr@buf buf `*.30uc  1 p 1 74 ]
+[v floatStr@maxVal maxVal `uc  1 p 1 75 ]
+"37
 } 0
 "43 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
-[v ___fltol@exp1 exp1 `uc  1 a 1 58 ]
-[v ___fltol@sign1 sign1 `uc  1 a 1 57 ]
+[v ___fltol@exp1 exp1 `uc  1 a 1 69 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 68 ]
 "43
-[v ___fltol@f1 f1 `d  1 p 4 49 ]
+[v ___fltol@f1 f1 `d  1 p 4 60 ]
 "70
-} 0
-"245 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
-[v ___flsub __flsub `(d  1 e 4 0 ]
-{
-[v ___flsub@b b `d  1 p 4 16 ]
-[v ___flsub@a a `d  1 p 4 20 ]
-"250
-} 0
-"10
-[v ___fladd __fladd `(d  1 e 4 0 ]
-{
-"17
-[v ___fladd@grs grs `uc  1 a 1 15 ]
-"15
-[v ___fladd@bexp bexp `uc  1 a 1 14 ]
-"16
-[v ___fladd@aexp aexp `uc  1 a 1 13 ]
-"13
-[v ___fladd@signs signs `uc  1 a 1 12 ]
-"10
-[v ___fladd@b b `d  1 p 4 0 ]
-[v ___fladd@a a `d  1 p 4 4 ]
-"237
-} 0
-"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\flge.c
-[v ___flge __flge `(b  1 e 0 0 ]
-{
-[v ___flge@ff1 ff1 `d  1 p 4 0 ]
-[v ___flge@ff2 ff2 `d  1 p 4 4 ]
-"19
 } 0
 "7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
@@ -319,86 +372,6 @@
 [v ___awdiv@dividend dividend `i  1 p 2 0 ]
 [v ___awdiv@divisor divisor `i  1 p 2 2 ]
 "41
-} 0
-"33 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\lm35.c
-[v _leerTemperatura leerTemperatura `(f  1 e 4 0 ]
-{
-"34
-[v leerTemperatura@suma suma `ul  1 a 4 67 ]
-"38
-[v leerTemperatura@temperatura temperatura `f  1 a 4 61 ]
-"37
-[v leerTemperatura@voltaje_mV voltaje_mV `f  1 a 4 57 ]
-"36
-[v leerTemperatura@promedio promedio `ui  1 a 2 65 ]
-"35
-[v leerTemperatura@i i `uc  1 a 1 71 ]
-"55
-} 0
-"21
-[v _leer_adc_raw leer_adc_raw `(ui  1 s 2 leer_adc_raw ]
-{
-"31
-} 0
-"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\xxtofl.c
-[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-{
-[v ___xxtofl@sign sign `uc  1 p 1 wreg ]
-"13
-[v ___xxtofl@arg arg `ul  1 a 4 10 ]
-"12
-[v ___xxtofl@exp exp `uc  1 a 1 9 ]
-"10
-[v ___xxtofl@sign sign `uc  1 p 1 wreg ]
-[v ___xxtofl@val val `l  1 p 4 0 ]
-"15
-[v ___xxtofl@sign sign `uc  1 p 1 8 ]
-"44
-} 1
-"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
-[v ___flmul __flmul `(d  1 e 4 0 ]
-{
-[s S824 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
-"13
-[s S829 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S832 . 4 `l 1 i 4 0 `d 1 f 4 0 `S824 1 fAsBytes 4 0 `S829 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S832  1 a 4 43 ]
-"12
-[v ___flmul@grs grs `ul  1 a 4 37 ]
-[s S900 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
-"14
-[u S903 . 2 `s 1 i 2 0 `us 1 n 2 0 `S900 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S903  1 a 2 47 ]
-"10
-[v ___flmul@bexp bexp `uc  1 a 1 42 ]
-"11
-[v ___flmul@aexp aexp `uc  1 a 1 41 ]
-"9
-[v ___flmul@sign sign `uc  1 a 1 36 ]
-"8
-[v ___flmul@b b `d  1 p 4 24 ]
-[v ___flmul@a a `d  1 p 4 28 ]
-"205
-} 0
-"11 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcdiv.c
-[v ___fldiv __fldiv `(d  1 e 4 0 ]
-{
-"21
-[v ___fldiv@grs grs `ul  1 a 4 19 ]
-"22
-[v ___fldiv@rem rem `ul  1 a 4 12 ]
-"20
-[v ___fldiv@new_exp new_exp `s  1 a 2 17 ]
-"19
-[v ___fldiv@aexp aexp `uc  1 a 1 24 ]
-"18
-[v ___fldiv@bexp bexp `uc  1 a 1 23 ]
-"16
-[v ___fldiv@sign sign `uc  1 a 1 16 ]
-"11
-[v ___fldiv@b b `d  1 p 4 0 ]
-[v ___fldiv@a a `d  1 p 4 4 ]
-"185
 } 0
 "69 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\ssd1306.c
 [v _OLED_Print OLED_Print `(v  1 e 1 0 ]
@@ -478,7 +451,259 @@
 {
 "16
 } 0
-"3
+"115 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\mq135.c
+[v _MQ135_calibrarR0 MQ135_calibrarR0 `(f  1 e 4 0 ]
+{
+"118
+[v MQ135_calibrarR0@suma suma `f  1 a 4 20 ]
+"116
+[v MQ135_calibrarR0@rs rs `f  1 a 4 16 ]
+[v MQ135_calibrarR0@r0 r0 `f  1 a 4 12 ]
+[v MQ135_calibrarR0@adc adc `f  1 a 4 8 ]
+"117
+[v MQ135_calibrarR0@i i `uc  1 a 1 24 ]
+"134
+} 0
+"59
+[v _MQ135_calcularRs MQ135_calcularRs `(f  1 e 4 0 ]
+{
+"60
+[v MQ135_calcularRs@voltaje voltaje `f  1 a 4 4 ]
+"61
+[v MQ135_calcularRs@rs rs `f  1 a 4 0 ]
+"59
+[v MQ135_calcularRs@adc adc `f  1 p 4 85 ]
+"73
+} 0
+"29
+[v _MQ135_LeerADC MQ135_LeerADC `(f  1 e 4 0 ]
+{
+"30
+[v MQ135_LeerADC@suma suma `ul  1 a 4 33 ]
+"31
+[v MQ135_LeerADC@i i `uc  1 a 1 37 ]
+"45
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 8 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 12 ]
+"7
+[v ___lldiv@dividend dividend `ul  1 p 4 0 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 4 ]
+"30
+} 0
+"86 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\mq135.c
+[v _MQ135_calcularPPM MQ135_calcularPPM `(f  1 e 4 0 ]
+{
+"88
+[v MQ135_calcularPPM@ppm ppm `f  1 a 4 25 ]
+"87
+[v MQ135_calcularPPM@ratio ratio `f  1 a 4 21 ]
+"86
+[v MQ135_calcularPPM@rs rs `f  1 p 4 9 ]
+[v MQ135_calcularPPM@r0 r0 `f  1 p 4 13 ]
+"104
+} 0
+"55 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\powf.c
+[v _powf powf `JJ(f  1 e 4 0 ]
+{
+"203
+[v powf@s2 s2 `f  1 a 4 136 ]
+[u S1092 fui 4 `f 1 f 4 0 `ul 1 u 4 0 `l 1 i 4 0 ]
+"202
+[v powf@s_h s_h `S1092  1 a 4 108 ]
+[v powf@t_h t_h `S1092  1 a 4 104 ]
+"203
+[v powf@t_l t_l `f  1 a 4 44 ]
+[v powf@s_l s_l `f  1 a 4 36 ]
+[u S1092 fui 4 `f 1 f 4 0 `ul 1 u 4 0 `l 1 i 4 0 ]
+"65
+[v powf@z z `S1092  1 a 4 172 ]
+[v powf@t t `S1092  1 a 4 168 ]
+[v powf@ix ix `S1092  1 a 4 164 ]
+"59
+[v powf@j j `l  1 a 4 160 ]
+[v powf@k k `l  1 a 4 156 ]
+"65
+[v powf@p_h p_h `S1092  1 a 4 152 ]
+[v powf@is is `S1092  1 a 4 144 ]
+"59
+[v powf@iy iy `l  1 a 4 140 ]
+"65
+[v powf@t1 t1 `S1092  1 a 4 132 ]
+"59
+[v powf@n n `l  1 a 4 128 ]
+"65
+[v powf@hy hy `S1092  1 a 4 124 ]
+"58
+[v powf@v v `f  1 a 4 120 ]
+[v powf@u u `f  1 a 4 116 ]
+"65
+[v powf@ax ax `S1092  1 a 4 112 ]
+"57
+[v powf@p_l p_l `f  1 a 4 100 ]
+"65
+[v powf@hx hx `S1092  1 a 4 96 ]
+"61
+[v powf@sn sn `ul  1 a 4 92 ]
+"58
+[v powf@s s `f  1 a 4 88 ]
+"59
+[v powf@yisint yisint `l  1 a 4 76 ]
+"58
+[v powf@r r `f  1 a 4 72 ]
+[v powf@w w `f  1 a 4 56 ]
+"65
+[v powf@y1 y1 `S1092  1 a 4 32 ]
+"59
+[v powf@i i `l  1 a 4 28 ]
+"57
+[v powf@z_l z_l `f  1 a 4 24 ]
+[v powf@z_h z_h `f  1 a 4 20 ]
+"58
+[v powf@t2 t2 `f  1 a 4 16 ]
+"55
+[v powf@x x `f  1 p 4 85 ]
+[v powf@y y `f  1 p 4 89 ]
+"348
+} 0
+"24 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sqrtf.c
+[v _sqrtf sqrtf `(f  1 e 4 0 ]
+{
+[u S1215 . 4 `f 1 f 4 0 `l 1 i 4 0 ]
+"29
+[v sqrtf@ix ix `S1215  1 a 4 33 ]
+"28
+[v sqrtf@r r `ul  1 a 4 29 ]
+"27
+[v sqrtf@m m `l  1 a 4 25 ]
+[v sqrtf@t t `l  1 a 4 21 ]
+[v sqrtf@q q `l  1 a 4 17 ]
+[v sqrtf@i i `l  1 a 4 13 ]
+[v sqrtf@s s `l  1 a 4 9 ]
+"24
+[v sqrtf@x x `f  1 p 4 0 ]
+"102
+} 0
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\scalbnf.c
+[v _scalbnf scalbnf `(f  1 e 4 0 ]
+{
+"7
+[v scalbnf@y y `f  1 a 4 74 ]
+[u S1205 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"6
+[v scalbnf@u u `S1205  1 a 4 70 ]
+"4
+[v scalbnf@x x `f  1 p 4 60 ]
+[v scalbnf@n n `i  1 p 2 64 ]
+"31
+} 0
+"8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S957 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S962 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S965 . 4 `l 1 i 4 0 `d 1 f 4 0 `S957 1 fAsBytes 4 0 `S962 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S965  1 a 4 54 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 49 ]
+[s S1033 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S1036 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1033 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1036  1 a 2 58 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 53 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 48 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 47 ]
+"8
+[v ___flmul@b b `d  1 p 4 35 ]
+[v ___flmul@a a `d  1 p 4 39 ]
+"205
+} 0
+"10 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 p 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 23 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 22 ]
+"10
+[v ___xxtofl@sign sign `uc  1 p 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 13 ]
+"15
+[v ___xxtofl@sign sign `uc  1 p 1 21 ]
+"44
+} 1
+"245 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcadd.c
+[v ___flsub __flsub `(d  1 e 4 0 ]
+{
+[v ___flsub@b b `d  1 p 4 27 ]
+[v ___flsub@a a `d  1 p 4 31 ]
+"250
+} 0
+"10
+[v ___fladd __fladd `(d  1 e 4 0 ]
+{
+"17
+[v ___fladd@grs grs `uc  1 a 1 15 ]
+"15
+[v ___fladd@bexp bexp `uc  1 a 1 14 ]
+"16
+[v ___fladd@aexp aexp `uc  1 a 1 13 ]
+"13
+[v ___fladd@signs signs `uc  1 a 1 12 ]
+"10
+[v ___fladd@b b `d  1 p 4 0 ]
+[v ___fladd@a a `d  1 p 4 4 ]
+"237
+} 0
+"15 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\flneg.c
+[v ___flneg __flneg `(d  1 e 4 0 ]
+{
+[v ___flneg@f1 f1 `d  1 p 4 0 ]
+"20
+} 0
+"4 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+{
+[v ___flge@ff1 ff1 `d  1 p 4 35 ]
+[v ___flge@ff2 ff2 `d  1 p 4 39 ]
+"19
+} 0
+"11 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 79 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 72 ]
+"20
+[v ___fldiv@new_exp new_exp `s  1 a 2 77 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 84 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 83 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 76 ]
+"11
+[v ___fldiv@b b `d  1 p 4 60 ]
+[v ___fldiv@a a `d  1 p 4 64 ]
+"185
+} 0
+"8 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\mq135.c
+[v _MQ135_Init MQ135_Init `(v  1 e 1 0 ]
+{
+"27
+} 0
+"3 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\i2c.c
 [v _I2C_Init I2C_Init `(v  1 e 1 0 ]
 {
 "11

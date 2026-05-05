@@ -1,60 +1,81 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"7986 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7986: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
-[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
-"7992
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7992:     struct {
-[s S344 :2 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S344 . SCS IOFS OSTS IRCF IDLEN ]
-"7999
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7999:     struct {
-[s S345 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S345 . SCS0 SCS1 FLTS . IRCF0 IRCF1 IRCF2 ]
-"7991
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7991: typedef union {
-[u S343 `S344 1 `S345 1 ]
-[n S343 . . . ]
-"8009
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 8009: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0xFD3)));
-[v _OSCCONbits `VS343 ~T0 @X0 0 e@4051 ]
+"3438 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 3438:     struct {
+[s S142 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S142 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 ]
+"3447
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 3447:     struct {
+[s S143 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S143 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 ]
+"3437
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 3437: typedef union {
+[u S141 `S142 1 `S143 1 ]
+[n S141 . . . ]
+"3457
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 3457: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
+[v _TRISAbits `VS141 ~T0 @X0 0 e@3986 ]
+"6581
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6581: extern volatile unsigned char ADCON1 __attribute__((address(0xFC1)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
+"6510
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6510: extern volatile unsigned char ADCON2 __attribute__((address(0xFC0)));
+[v _ADCON2 `Vuc ~T0 @X0 0 e@4032 ]
+"6666
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6666: extern volatile unsigned char ADCON0 __attribute__((address(0xFC2)));
+[v _ADCON0 `Vuc ~T0 @X0 0 e@4034 ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"5587 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 5587: extern volatile unsigned char CMCON __attribute__((address(0xFB4)));
-[v _CMCON `Vuc ~T0 @X0 0 e@4020 ]
-"10 ./lm35.h
-[; ;./lm35.h: 10: void ADC_Init(void);
-[v _ADC_Init `(v ~T0 @X0 0 ef ]
-"26 ./mq135.h
-[; ;./mq135.h: 26: void MQ135_Init(void);
-[v _MQ135_Init `(v ~T0 @X0 0 ef ]
-"7 ./i12c.h
-[; ;./i12c.h: 7: void I2C_Init(void);
-[v _I2C_Init `(v ~T0 @X0 0 ef ]
-"12 ./ssd1306.h
-[; ;./ssd1306.h: 12: void OLED_Init(void);
-[v _OLED_Init `(v ~T0 @X0 0 ef ]
-"16
-[; ;./ssd1306.h: 16: void OLED_Print(unsigned char page, unsigned char col, const char *str);
-[v _OLED_Print `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
-"30 ./mq135.h
-[; ;./mq135.h: 30: float MQ135_calibrarR0(void);
-[v _MQ135_calibrarR0 `(f ~T0 @X0 0 ef ]
-"11 ./lm35.h
-[; ;./lm35.h: 11: float leerTemperatura(void);
-[v _leerTemperatura `(f ~T0 @X0 0 ef ]
-"27 ./mq135.h
-[; ;./mq135.h: 27: float MQ135_LeerADC(void);
-[v _MQ135_LeerADC `(f ~T0 @X0 0 ef ]
-"28
-[; ;./mq135.h: 28: float MQ135_calcularRs(float adc);
-[v _MQ135_calcularRs `(f ~T0 @X0 0 ef1`f ]
-"29
-[; ;./mq135.h: 29: float MQ135_calcularPPM(float rs, float r0);
-[v _MQ135_calcularPPM `(f ~T0 @X0 0 ef2`f`f ]
+"6672 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6672:     struct {
+[s S273 :1 `uc 1 :1 `uc 1 ]
+[n S273 . . GO_NOT_DONE ]
+"6676
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6676:     struct {
+[s S274 :1 `uc 1 :1 `uc 1 :4 `uc 1 ]
+[n S274 . ADON GO_nDONE CHS ]
+"6681
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6681:     struct {
+[s S275 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S275 . . GO_DONE CHS0 CHS1 CHS2 CHS3 ]
+"6689
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6689:     struct {
+[s S276 :1 `uc 1 :1 `uc 1 ]
+[n S276 . . DONE ]
+"6693
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6693:     struct {
+[s S277 :1 `uc 1 :1 `uc 1 ]
+[n S277 . . GO ]
+"6697
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6697:     struct {
+[s S278 :1 `uc 1 :1 `uc 1 ]
+[n S278 . . NOT_DONE ]
+"6701
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6701:     struct {
+[s S279 :1 `uc 1 :1 `uc 1 ]
+[n S279 . . nDONE ]
+"6705
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6705:     struct {
+[s S280 :1 `uc 1 :1 `uc 1 ]
+[n S280 . . GODONE ]
+"6671
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6671: typedef union {
+[u S272 `S273 1 `S274 1 `S275 1 `S276 1 `S277 1 `S278 1 `S279 1 `S280 1 ]
+[n S272 . . . . . . . . . ]
+"6710
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6710: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0xFC2)));
+[v _ADCON0bits `VS272 ~T0 @X0 0 e@4034 ]
+"6799
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6799: extern volatile unsigned char ADRESH __attribute__((address(0xFC4)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@4036 ]
+"6792
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6792: extern volatile unsigned char ADRESL __attribute__((address(0xFC3)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@4035 ]
+[v F3532 `(f ~T0 @X0 1 tf2`f`f ]
+"327 C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/math.h
+[; ;C:\Program Files\Microchip\xc8\v3.10\pic\include\c99/math.h: 327: __attribute__((nonreentrant)) float powf(float, float);
+[v _powf `JF3532 ~T0 @X0 0 e ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -565,309 +586,228 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8893
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 8893: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"7 man.c
-[; ;man.c: 7:     unsigned char i, entero, decimal;
-[p x FOSC      =  INTOSC_HS ]
-"8
-[; ;man.c: 8:     for(i = 0; i < 10; i++) buf[i] = ' ';
-[p x CPUDIV  =  OSC1_PLL2 ]
-"9
-[; ;man.c: 9:     if(num < 0.0) num = 0.0;
-[p x PLLDIV  =  1 ]
-"10
-[; ;man.c: 10:     if(num > (float)maxVal) num = (float)maxVal;
-[p x WDT        =  OFF ]
-"11
-[; ;man.c: 11:     entero = (unsigned char)num;
-[p x PWRT      =  ON ]
-"12
-[; ;man.c: 12:     decimal = (unsigned char)((num - (float)entero) * 10.0);
-[p x BOR        =  OFF ]
-"13
-[; ;man.c: 13:     buf[0] = (char)((entero / 10) + '0');
-[p x LVP        =  OFF ]
-"14
-[; ;man.c: 14:     buf[1] = (char)((entero % 10) + '0');
-[p x MCLRE    =  ON ]
-"15
-[; ;man.c: 15:     buf[2] = '.';
-[p x PBADEN  =  OFF ]
-"16
-[; ;man.c: 16:     buf[3] = (char)(decimal + '0');
-[p x DEBUG    =  OFF ]
-"24
-[; ;man.c: 24:     for(i = 0; i < 8; i++) buf[i] = ' ';
-[v _floatStr `(v ~T0 @X0 1 ef3`f`*uc`uc ]
+"8 mq135.c
+[; ;mq135.c: 8: void MQ135_Init(void) {
+[v _MQ135_Init `(v ~T0 @X0 1 ef ]
 {
-[e :U _floatStr ]
-[v _num `f ~T0 @X0 1 r1 ]
-[v _buf `*uc ~T0 @X0 1 r2 ]
-[v _maxVal `uc ~T0 @X0 1 r3 ]
+[e :U _MQ135_Init ]
 [f ]
-"25
-[; ;man.c: 25:     buf[0] = (char)((ppm / 1000) + '0');
-[v _i `uc ~T0 @X0 1 a ]
-[v _entero `uc ~T0 @X0 1 a ]
-[v _decimal `uc ~T0 @X0 1 a ]
+"10
+[; ;mq135.c: 10:     TRISAbits.TRISA1 = 1;
+[e = . . _TRISAbits 0 1 -> -> 1 `i `uc ]
+"15
+[; ;mq135.c: 15:     ADCON1 = 0x0D;
+[e = _ADCON1 -> -> 13 `i `uc ]
+"18
+[; ;mq135.c: 18:     ADCON2 = 0xBE;
+[e = _ADCON2 -> -> 190 `i `uc ]
+"22
+[; ;mq135.c: 22:     ADCON0 = 0x05;
+[e = _ADCON0 -> -> 5 `i `uc ]
+"24
+[; ;mq135.c: 24:     _delay((unsigned long)((100)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
 "26
-[; ;man.c: 26:     buf[1] = (char)(((ppm % 1000)/100) + '0');
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 368  ]
-[e $U 369  ]
-[e :U 368 ]
-[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux -> -> 32 `ui `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 368  ]
-[e :U 369 ]
-}
+[; ;mq135.c: 26:     _delay((unsigned long)((3000)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 3000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
 "27
-[; ;man.c: 27:     buf[2] = (char)(((ppm % 100)/10) + '0');
-[e $ ! < -> _num `d .0.0 371  ]
-[e = _num -> .0.0 `f ]
-[e :U 371 ]
-"28
-[; ;man.c: 28:     buf[3] = (char)((ppm % 10) + '0');
-[e $ ! > _num -> _maxVal `f 372  ]
-[e = _num -> _maxVal `f ]
-[e :U 372 ]
-"29
-[; ;man.c: 29:     buf[4] = ' ';
-[e = _entero -> _num `uc ]
-"30
-[; ;man.c: 30:     buf[5] = '\0';
-[e = _decimal -> * -> - _num -> _entero `f `d .10.0 `uc ]
-"31
-[; ;man.c: 31: }
-[e = *U + _buf * -> -> 0 `i `x -> -> # *U _buf `i `x -> + -> / -> _entero `i -> 10 `i `ui -> 48 `ui `uc ]
-"32
-[; ;man.c: 32: 
-[e = *U + _buf * -> -> 1 `i `x -> -> # *U _buf `i `x -> + -> % -> _entero `i -> 10 `i `ui -> 48 `ui `uc ]
-"33
-[; ;man.c: 33: void main(void) {
-[e = *U + _buf * -> -> 2 `i `x -> -> # *U _buf `i `x -> -> 46 `ui `uc ]
-"34
-[; ;man.c: 34:     OSCCON = 0x72;
-[e = *U + _buf * -> -> 3 `i `x -> -> # *U _buf `i `x -> + -> _decimal `ui -> 48 `ui `uc ]
-"35
-[; ;man.c: 35:     while(!OSCCONbits.IOFS);
-[e = *U + _buf * -> -> 4 `i `x -> -> # *U _buf `i `x -> -> 32 `ui `uc ]
-"36
-[; ;man.c: 36:     _delay((unsigned long)((200)*(8000000UL/4000.0)));
-[e = *U + _buf * -> -> 5 `i `x -> -> # *U _buf `i `x -> -> 0 `ui `uc ]
-"37
-[; ;man.c: 37: 
+[; ;mq135.c: 27: }
 [e :UE 367 ]
 }
-"40
-[; ;man.c: 40: 
-[v _ppmStr `(v ~T0 @X0 1 ef2`ui`*uc ]
+"29
+[; ;mq135.c: 29: float MQ135_LeerADC(void) {
+[v _MQ135_LeerADC `(f ~T0 @X0 1 ef ]
 {
-[e :U _ppmStr ]
-[v _ppm `ui ~T0 @X0 1 r1 ]
-[v _buf `*uc ~T0 @X0 1 r2 ]
+[e :U _MQ135_LeerADC ]
 [f ]
-"41
-[; ;man.c: 41:     ADC_Init();
+"30
+[; ;mq135.c: 30:     unsigned long suma = 0;
+[v _suma `ul ~T0 @X0 1 a ]
+[e = _suma -> -> -> 0 `i `l `ul ]
+"31
+[; ;mq135.c: 31:     unsigned char i;
 [v _i `uc ~T0 @X0 1 a ]
-"42
-[; ;man.c: 42:     MQ135_Init();
+"34
+[; ;mq135.c: 34:     ADCON0 = 0x05;
+[e = _ADCON0 -> -> 5 `i `uc ]
+"35
+[; ;mq135.c: 35:     _delay((unsigned long)((25)*(8000000UL/4000000.0)));
+[e ( __delay (1 -> * -> -> 25 `i `d / -> -> 8000000 `ul `d .4000000.0 `ul ]
+"37
+[; ;mq135.c: 37:     for(i = 0; i < 10; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 374  ]
-[e $U 375  ]
+[e $ < -> _i `i -> 10 `i 369  ]
+[e $U 370  ]
+[e :U 369 ]
+{
+"38
+[; ;mq135.c: 38:         ADCON0bits.GO_nDONE = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
+"39
+[; ;mq135.c: 39:         while(ADCON0bits.GO_nDONE);
+[e $U 372  ]
+[e :U 373 ]
+[e :U 372 ]
+[e $ != -> . . _ADCON0bits 1 1 `i -> 0 `i 373  ]
 [e :U 374 ]
-[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux -> -> 32 `ui `uc ]
+"40
+[; ;mq135.c: 40:         suma += (unsigned int)(((unsigned int)ADRESH << 8) | ADRESL);
+[e =+ _suma -> | << -> _ADRESH `ui -> 8 `i -> _ADRESL `ui `ul ]
+"41
+[; ;mq135.c: 41:         _delay((unsigned long)((5)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"42
+[; ;mq135.c: 42:     }
+}
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 374  ]
-[e :U 375 ]
+[e $ < -> _i `i -> 10 `i 369  ]
+[e :U 370 ]
 }
-"43
-[; ;man.c: 43:     I2C_Init();
-[e = *U + _buf * -> -> 0 `i `x -> -> # *U _buf `i `x -> + / _ppm -> -> 1000 `i `ui -> 48 `ui `uc ]
 "44
-[; ;man.c: 44:     OLED_Init();
-[e = *U + _buf * -> -> 1 `i `x -> -> # *U _buf `i `x -> + / % _ppm -> -> 1000 `i `ui -> -> 100 `i `ui -> 48 `ui `uc ]
+[; ;mq135.c: 44:     return (float)(suma / 10);
+[e ) -> / _suma -> -> -> 10 `i `l `ul `f ]
+[e $UE 368  ]
 "45
-[; ;man.c: 45: 
-[e = *U + _buf * -> -> 2 `i `x -> -> # *U _buf `i `x -> + / % _ppm -> -> 100 `i `ui -> -> 10 `i `ui -> 48 `ui `uc ]
-"46
-[; ;man.c: 46: 
-[e = *U + _buf * -> -> 3 `i `x -> -> # *U _buf `i `x -> + % _ppm -> -> 10 `i `ui -> 48 `ui `uc ]
-"47
-[; ;man.c: 47:     OLED_Print(0, 10, "* INVERNADERO *");
-[e = *U + _buf * -> -> 4 `i `x -> -> # *U _buf `i `x -> -> 32 `ui `uc ]
-"48
-[; ;man.c: 48:     OLED_Print(2, 10, "Temp:");
-[e = *U + _buf * -> -> 5 `i `x -> -> # *U _buf `i `x -> -> 0 `ui `uc ]
-"49
-[; ;man.c: 49:     OLED_Print(4, 10, "Aire:");
-[e :UE 373 ]
+[; ;mq135.c: 45: }
+[e :UE 368 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"51
-[; ;man.c: 51: 
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"52
-[; ;man.c: 52:     float temp, adc_mq, rs, ppm;
-[e = _OSCCON -> -> 114 `i `uc ]
-"53
-[; ;man.c: 53:     char bufTemp[10];
-[e $U 378  ]
-[e :U 379 ]
-[e :U 378 ]
-[e $ ! != -> . . _OSCCONbits 0 1 `i -> 0 `i 379  ]
-[e :U 380 ]
-"54
-[; ;man.c: 54:     char bufPPM[8];
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"56
-[; ;man.c: 56:     float r0_real = MQ135_calibrarR0();
-[e = _CMCON -> -> 7 `i `uc ]
 "59
-[; ;man.c: 59:     OLED_Print(4, 10, "R0:");
-[e ( _ADC_Init ..  ]
-"60
-[; ;man.c: 60:     OLED_Print(4, 30, bufR0);
-[e ( _MQ135_Init ..  ]
-"61
-[; ;man.c: 61:     while(1);
-[e ( _I2C_Init ..  ]
-"62
-[; ;man.c: 62:     while(1) {
-[e ( _OLED_Init ..  ]
-"65
-[; ;man.c: 65:         floatStr(temp, bufTemp, 55);
-[e ( _OLED_Print (3 , , -> -> 0 `i `uc -> -> 10 `i `uc :s 1C ]
-"66
-[; ;man.c: 66:         OLED_Print(2, 46, "       ");
-[e ( _OLED_Print (3 , , -> -> 2 `i `uc -> -> 10 `i `uc :s 2C ]
-"67
-[; ;man.c: 67:         OLED_Print(2, 46, bufTemp);
-[e ( _OLED_Print (3 , , -> -> 4 `i `uc -> -> 10 `i `uc :s 3C ]
-"68
-[; ;man.c: 68:         OLED_Print(2, 82, "C");
-[e ( _OLED_Print (3 , , -> -> 6 `i `uc -> -> 10 `i `uc :s 4C ]
-"70
-[; ;man.c: 70: 
-[v _temp `f ~T0 @X0 1 a ]
-[v _adc_mq `f ~T0 @X0 1 a ]
-[v _rs `f ~T0 @X0 1 a ]
-[v _ppm `f ~T0 @X0 1 a ]
-"71
-[; ;man.c: 71:         adc_mq = MQ135_LeerADC();
-[v _bufTemp `uc ~T0 @X0 -> 10 `i a ]
-"72
-[; ;man.c: 72:         rs = MQ135_calcularRs(adc_mq);
-[v _bufPPM `uc ~T0 @X0 -> 8 `i a ]
-"73
-[; ;man.c: 73:         ppm = MQ135_calcularPPM(rs, 10.0);
-[v _calidad `*uc ~T0 @X0 1 a ]
-"74
-[; ;man.c: 74: 
-[v _r0_real `f ~T0 @X0 1 a ]
-[e = _r0_real ( _MQ135_calibrarR0 ..  ]
-"75
-[; ;man.c: 75:         ppmStr((unsigned int)ppm, bufPPM);
-[v _bufR0 `uc ~T0 @X0 -> 10 `i a ]
-"76
-[; ;man.c: 76:         OLED_Print(4, 46, "       ");
-[e ( _floatStr (3 , , _r0_real &U _bufR0 -> -> 99 `i `uc ]
-"77
-[; ;man.c: 77:         OLED_Print(4, 46, bufPPM);
-[e ( _OLED_Print (3 , , -> -> 4 `i `uc -> -> 10 `i `uc :s 5C ]
-"78
-[; ;man.c: 78:         OLED_Print(4, 82, "ppm");
-[e ( _OLED_Print (3 , , -> -> 4 `i `uc -> -> 30 `i `uc -> &U _bufR0 `*Cuc ]
-"79
-[; ;man.c: 79: 
-[e :U 382 ]
-[e :U 381 ]
-[e $U 382  ]
-[e :U 383 ]
-"80
-[; ;man.c: 80:                 if(ppm < 450.0) calidad = "BUENO  ";
-[e :U 385 ]
+[; ;mq135.c: 59: float MQ135_calcularRs(float adc) {
+[v _MQ135_calcularRs `(f ~T0 @X0 1 ef1`f ]
 {
-"82
-[; ;man.c: 82:          else if(ppm < 1500.0) calidad = "MALO   ";
-[e = _temp ( _leerTemperatura ..  ]
-"83
-[; ;man.c: 83:          else calidad = "PELIGRO";
-[e ( _floatStr (3 , , _temp &U _bufTemp -> -> 55 `i `uc ]
-"84
-[; ;man.c: 84: 
-[e ( _OLED_Print (3 , , -> -> 2 `i `uc -> -> 46 `i `uc :s 6C ]
-"85
-[; ;man.c: 85:         OLED_Print(6, 46, "       ");
-[e ( _OLED_Print (3 , , -> -> 2 `i `uc -> -> 46 `i `uc -> &U _bufTemp `*Cuc ]
-"86
-[; ;man.c: 86:         OLED_Print(6, 46, calidad);
-[e ( _OLED_Print (3 , , -> -> 2 `i `uc -> -> 82 `i `uc :s 7C ]
-"89
-[; ;man.c: 89:     }
-[e = _adc_mq ( _MQ135_LeerADC ..  ]
-"90
-[; ;man.c: 90: }
-[e = _rs ( _MQ135_calcularRs (1 _adc_mq ]
-"91
-[e = _ppm ( _MQ135_calcularPPM (2 , _rs -> .10.0 `f ]
-"93
-[e ( _ppmStr (2 , -> _ppm `ui &U _bufPPM ]
-"94
-[e ( _OLED_Print (3 , , -> -> 4 `i `uc -> -> 46 `i `uc :s 8C ]
-"95
-[e ( _OLED_Print (3 , , -> -> 4 `i `uc -> -> 46 `i `uc -> &U _bufPPM `*Cuc ]
-"96
-[e ( _OLED_Print (3 , , -> -> 4 `i `uc -> -> 82 `i `uc :s 9C ]
-"98
-[e $ ! < -> _ppm `d .450.0 387  ]
-[e = _calidad :s 10C ]
-[e $U 388  ]
-"99
-[e :U 387 ]
-[e $ ! < -> _ppm `d .700.0 389  ]
-[e = _calidad :s 11C ]
-[e $U 390  ]
-"100
-[e :U 389 ]
-[e $ ! < -> _ppm `d .1500.0 391  ]
-[e = _calidad :s 12C ]
-[e $U 392  ]
-"101
-[e :U 391 ]
-[e = _calidad :s 13C ]
-[e :U 392 ]
-[e :U 390 ]
-[e :U 388 ]
-"103
-[e ( _OLED_Print (3 , , -> -> 6 `i `uc -> -> 46 `i `uc :s 14C ]
-"104
-[e ( _OLED_Print (3 , , -> -> 6 `i `uc -> -> 46 `i `uc -> _calidad `*Cuc ]
-"106
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"107
+[e :U _MQ135_calcularRs ]
+[v _adc `f ~T0 @X0 1 r1 ]
+[f ]
+"60
+[; ;mq135.c: 60:     float voltaje;
+[v _voltaje `f ~T0 @X0 1 a ]
+"61
+[; ;mq135.c: 61:     float rs;
+[v _rs `f ~T0 @X0 1 a ]
+"64
+[; ;mq135.c: 64:     voltaje = adc * (5000.0 / 1024.0);
+[e = _voltaje -> * -> _adc `d / .5000.0 .1024.0 `f ]
+"67
+[; ;mq135.c: 67:     if(voltaje <= 0.0) voltaje = 0.001;
+[e $ ! <= -> _voltaje `d .0.0 376  ]
+[e = _voltaje -> .0.001 `f ]
+[e :U 376 ]
+"70
+[; ;mq135.c: 70:     rs = 1.0 * (5000.0 - voltaje) / voltaje;
+[e = _rs -> / * .1.0 - .5000.0 -> _voltaje `d -> _voltaje `d `f ]
+"72
+[; ;mq135.c: 72:     return rs;
+[e ) _rs ]
+[e $UE 375  ]
+"73
+[; ;mq135.c: 73: }
+[e :UE 375 ]
 }
-[e :U 384 ]
-[e $U 385  ]
-[e :U 386 ]
-"108
+"86
+[; ;mq135.c: 86: float MQ135_calcularPPM(float rs, float r0) {
+[v _MQ135_calcularPPM `(f ~T0 @X0 1 ef2`f`f ]
+{
+[e :U _MQ135_calcularPPM ]
+[v _rs `f ~T0 @X0 1 r1 ]
+[v _r0 `f ~T0 @X0 1 r2 ]
+[f ]
+"87
+[; ;mq135.c: 87:     float ratio;
+[v _ratio `f ~T0 @X0 1 a ]
+"88
+[; ;mq135.c: 88:     float ppm;
+[v _ppm `f ~T0 @X0 1 a ]
+"90
+[; ;mq135.c: 90:     if(r0 <= 0.0) r0 = 10.0;
+[e $ ! <= -> _r0 `d .0.0 378  ]
+[e = _r0 -> .10.0 `f ]
+[e :U 378 ]
+"92
+[; ;mq135.c: 92:     ratio = rs / r0;
+[e = _ratio / _rs _r0 ]
+"94
+[; ;mq135.c: 94:     if(ratio <= 0.0) ratio = 0.001;
+[e $ ! <= -> _ratio `d .0.0 379  ]
+[e = _ratio -> .0.001 `f ]
+[e :U 379 ]
+"97
+[; ;mq135.c: 97:     ppm = 116.6020682 * powf(ratio,-2.769034857);
+[e = _ppm -> * .116.6020682 -> ( _powf (2 , _ratio -> -U .2.769034857 `f `d `f ]
+"100
+[; ;mq135.c: 100:     if(ppm < 10.0) ppm = 10.0;
+[e $ ! < -> _ppm `d .10.0 380  ]
+[e = _ppm -> .10.0 `f ]
+[e :U 380 ]
+"101
+[; ;mq135.c: 101:     if(ppm > 10000.0) ppm = 10000.0;
+[e $ ! > -> _ppm `d .10000.0 381  ]
+[e = _ppm -> .10000.0 `f ]
+[e :U 381 ]
+"103
+[; ;mq135.c: 103:     return ppm;
+[e ) _ppm ]
+[e $UE 377  ]
+"104
+[; ;mq135.c: 104: }
 [e :UE 377 ]
 }
-[a 9C 112 112 109 0 ]
-[a 13C 80 69 76 73 71 82 79 0 ]
-[a 7C 67 0 ]
-[a 2C 84 101 109 112 58 0 ]
-[a 4C 67 97 108 58 0 ]
-[a 3C 65 105 114 101 58 0 ]
-[a 5C 82 48 58 0 ]
-[a 1C 42 32 73 78 86 69 82 78 65 68 69 82 79 32 42 0 ]
-[a 11C 78 79 82 77 65 76 32 0 ]
-[a 10C 66 85 69 78 79 32 32 0 ]
-[a 12C 77 65 76 79 32 32 32 0 ]
-[a 6C 32 32 32 32 32 32 32 0 ]
-[a 8C 32 32 32 32 32 32 32 0 ]
-[a 14C 32 32 32 32 32 32 32 0 ]
+"115
+[; ;mq135.c: 115: float MQ135_calibrarR0(void) {
+[v _MQ135_calibrarR0 `(f ~T0 @X0 1 ef ]
+{
+[e :U _MQ135_calibrarR0 ]
+[f ]
+"116
+[; ;mq135.c: 116:     float adc, rs, r0;
+[v _adc `f ~T0 @X0 1 a ]
+[v _rs `f ~T0 @X0 1 a ]
+[v _r0 `f ~T0 @X0 1 a ]
+"117
+[; ;mq135.c: 117:     unsigned char i;
+[v _i `uc ~T0 @X0 1 a ]
+"118
+[; ;mq135.c: 118:     float suma = 0.0;
+[v _suma `f ~T0 @X0 1 a ]
+[e = _suma -> .0.0 `f ]
+"121
+[; ;mq135.c: 121:     for(i = 0; i < 50; i++) {
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 50 `i 383  ]
+[e $U 384  ]
+[e :U 383 ]
+{
+"122
+[; ;mq135.c: 122:         adc = MQ135_LeerADC();
+[e = _adc ( _MQ135_LeerADC ..  ]
+"123
+[; ;mq135.c: 123:         rs = MQ135_calcularRs(adc);
+[e = _rs ( _MQ135_calcularRs (1 _adc ]
+"124
+[; ;mq135.c: 124:         suma += rs;
+[e =+ _suma _rs ]
+"125
+[; ;mq135.c: 125:         _delay((unsigned long)((100)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"126
+[; ;mq135.c: 126:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 50 `i 383  ]
+[e :U 384 ]
+}
+"128
+[; ;mq135.c: 128:     rs = suma / 50.0;
+[e = _rs -> / -> _suma `d .50.0 `f ]
+"131
+[; ;mq135.c: 131:     r0 = rs / 3.6;
+[e = _r0 -> / -> _rs `d .3.6 `f ]
+"133
+[; ;mq135.c: 133:     return r0;
+[e ) _r0 ]
+[e $UE 382  ]
+"134
+[; ;mq135.c: 134: }
+[e :UE 382 ]
+}
