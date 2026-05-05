@@ -1,154 +1,192 @@
 #include "bme280.h"
-#include "i12c.h"          // ? nombre correcto con el 1
-#include <xc.h>
+#include "i12c.h"
 
-static BME280_Calib calib;
-static int32_t t_fine;
+static unsigned int  dig_T1;
+static int           dig_T2, dig_T3;
 
-static void BME280_Escribir(uint8_t reg, uint8_t valor) {
+// Humedad
+static unsigned char dig_H1;
+static int           dig_H2;
+static unsigned char dig_H3;
+static int           dig_H4, dig_H5;
+static signed char   dig_H6;
+
+// t_fine: variable intermedia requerida para compensar humedad
+static long          t_fine;
+
+static void BME280_WriteReg(unsigned char reg, unsigned char val) {
     I2C_Start();
-    I2C_Write((BME280_ADDR << 1) | 0x00);
-    I2C_Write(reg);
-    I2C_Write(valor);
+    I2C_Write(BME280_ADDR);     // Direccion + escritura
+    I2C_Write(reg);             // Registro destino
+    I2C_Write(val);             // Valor a escribir
     I2C_Stop();
+    __delay_ms(5);
 }
 
-static uint8_t BME280_LeerByte(uint8_t reg) {
-    uint8_t dato;
+// Lee un byte de un registro del BME280
+static unsigned char BME280_ReadReg(unsigned char reg) {
+    unsigned char dato;
+
+    // Primero escribimos el registro que queremos leer
     I2C_Start();
-    I2C_Write((BME280_ADDR << 1) | 0x00);
-    I2C_Write(reg);
-    I2C_RepeatedStart();
-    I2C_Write((BME280_ADDR << 1) | 0x01);
-    dato = (uint8_t)I2C_Read(0);        // NACK ? último byte
+    I2C_Write(BME280_ADDR);     // Direccion + escritura
+    I2C_Write(reg);             // Registro a leer
     I2C_Stop();
+    __delay_us(50);
+
+    // Luego leemos el dato
+    I2C_Start();
+    I2C_Write(BME280_ADDR | 0x01); // Direccion + lectura
+    // Habilitar recepcion I2C
+    SSPCON2bits.RCEN = 1;
+    while(!SSPSTATbits.BF);
+    dato = SSPBUF;
+    // NACK para terminar lectura
+    SSPCON2bits.ACKDT = 1;
+    SSPCON2bits.ACKEN = 1;
+    while(SSPCON2bits.ACKEN);
+    I2C_Stop();
+
     return dato;
 }
 
-static void BME280_LeerBytes(uint8_t reg, uint8_t *buf, uint8_t len) {
-    uint8_t i;
-    I2C_Start();
-    I2C_Write((BME280_ADDR << 1) | 0x00);
-    I2C_Write(reg);
-    I2C_RepeatedStart();
-    I2C_Write((BME280_ADDR << 1) | 0x01);
-    for (i = 0; i < len; i++) {
-        buf[i] = (uint8_t)I2C_Read(i == (len - 1) ? 0 : 1);
-    }
-    I2C_Stop();
+// Lee 2 bytes seguidos (little-endian) ? retorna int de 16 bits
+static int BME280_ReadInt16(unsigned char reg) {
+    unsigned char lsb, msb;
+    lsb = BME280_ReadReg(reg);
+    msb = BME280_ReadReg(reg + 1);
+    return (int)((msb << 8) | lsb);
+}
+
+// Lee 2 bytes sin signo
+static unsigned int BME280_ReadUInt16(unsigned char reg) {
+    unsigned char lsb, msb;
+    lsb = BME280_ReadReg(reg);
+    msb = BME280_ReadReg(reg + 1);
+    return (unsigned int)((msb << 8) | lsb);
 }
 
 static void BME280_LeerCalibracion(void) {
-    uint8_t buf[26];
+    unsigned char e5, e4, e6;
 
-    BME280_LeerBytes(0x88, buf, 24);
-    calib.dig_T1 = (uint16_t)(buf[1]  << 8) | buf[0];
-    calib.dig_T2 = (int16_t) (buf[3]  << 8) | buf[2];
-    calib.dig_T3 = (int16_t) (buf[5]  << 8) | buf[4];
-    calib.dig_P1 = (uint16_t)(buf[7]  << 8) | buf[6];
-    calib.dig_P2 = (int16_t) (buf[9]  << 8) | buf[8];
-    calib.dig_P3 = (int16_t) (buf[11] << 8) | buf[10];
-    calib.dig_P4 = (int16_t) (buf[13] << 8) | buf[12];
-    calib.dig_P5 = (int16_t) (buf[15] << 8) | buf[14];
-    calib.dig_P6 = (int16_t) (buf[17] << 8) | buf[16];
-    calib.dig_P7 = (int16_t) (buf[19] << 8) | buf[18];
-    calib.dig_P8 = (int16_t) (buf[21] << 8) | buf[20];
-    calib.dig_P9 = (int16_t) (buf[23] << 8) | buf[22];
+    // Calibracion temperatura (registros 0x88 al 0x8D)
+    dig_T1 = BME280_ReadUInt16(0x88);
+    dig_T2 = BME280_ReadInt16(0x8A);
+    dig_T3 = BME280_ReadInt16(0x8C);
 
-    calib.dig_H1 = BME280_LeerByte(0xA1);
+    // Calibracion humedad
+    dig_H1 = BME280_ReadReg(0xA1);
+    dig_H2 = BME280_ReadInt16(0xE1);
+    dig_H3 = BME280_ReadReg(0xE3);
 
-    BME280_LeerBytes(0xE1, buf, 7);
-    calib.dig_H2 = (int16_t)(buf[1] << 8) | buf[0];
-    calib.dig_H3 = buf[2];
-    calib.dig_H4 = (int16_t)(buf[3] << 4) | (buf[4] & 0x0F);
-    calib.dig_H5 = (int16_t)(buf[5] << 4) | (buf[4] >> 4);
-    calib.dig_H6 = (int8_t)buf[6];
+    // H4 y H5 comparten un byte (registro 0xE5) ? cálculo especial
+    e4 = BME280_ReadReg(0xE4);
+    e5 = BME280_ReadReg(0xE5);
+    e6 = BME280_ReadReg(0xE6);
+
+    dig_H4 = (int)(((int)e4 << 4) | (e5 & 0x0F));
+    dig_H5 = (int)(((int)e6 << 4) | (e5 >> 4));
+    dig_H6 = (signed char)BME280_ReadReg(0xE7);
 }
 
-static int32_t BME280_CompTemp(int32_t adc_T) {
-    int32_t var1, var2;
-    var1 = ((((adc_T >> 3) - ((int32_t)calib.dig_T1 << 1)))
-             * (int32_t)calib.dig_T2) >> 11;
-    var2 = (((((adc_T >> 4) - (int32_t)calib.dig_T1)
-             * ((adc_T >> 4) - (int32_t)calib.dig_T1)) >> 12)
-             * (int32_t)calib.dig_T3) >> 14;
+static void BME280_CalcularTFine(void) {
+    unsigned char msb, lsb, xlsb;
+    long adc_T;
+    long var1, var2;
+
+    // Leer 3 bytes de temperatura cruda (registros 0xFA, 0xFB, 0xFC)
+    msb  = BME280_ReadReg(0xFA);
+    lsb  = BME280_ReadReg(0xFB);
+    xlsb = BME280_ReadReg(0xFC);
+
+    // Combinar en valor de 20 bits
+    adc_T = ((long)msb << 12) | ((long)lsb << 4) | (xlsb >> 4);
+
+    // Compensacion temperatura segun datasheet BME280
+    var1 = ((((adc_T >> 3) - ((long)dig_T1 << 1))) *
+             ((long)dig_T2)) >> 11;
+
+    var2 = (((((adc_T >> 4) - ((long)dig_T1)) *
+              ((adc_T >> 4) - ((long)dig_T1))) >> 12) *
+             ((long)dig_T3)) >> 14;
+
+    // t_fine es la variable intermedia global
     t_fine = var1 + var2;
-    return (t_fine * 5 + 128) >> 8;
 }
 
-static uint32_t BME280_CompPresion(int32_t adc_P) {
-    int32_t  var1, var2;
-    uint32_t p;
+// ?????????????????????????????????????????????????????
+// INICIALIZACION del BME280
+// Retorna 1 si el sensor responde, 0 si hay error
+// ?????????????????????????????????????????????????????
+unsigned char BME280_Init(void) {
+    unsigned char chip_id;
+    __delay_ms(100);  // Espera arranque del sensor
 
-    var1 = ((int32_t)t_fine >> 1) - 64000L;
-    var2 = (((var1 >> 2) * (var1 >> 2)) >> 11) * (int32_t)calib.dig_P6;
-    var2 = var2 + ((var1 * (int32_t)calib.dig_P5) << 1);
-    var2 = (var2 >> 2) + ((int32_t)calib.dig_P4 << 16);
+    // Verificar que el sensor responde ? debe leer 0x60
+    chip_id = BME280_ReadReg(BME280_REG_ID);
+    if(chip_id != 0x60) {
+        return 0;  // Sensor no encontrado o mal conectado
+    }
 
-    // Fix warning de precedencia ? paréntesis explícitos
-    var1 = ((((int32_t)calib.dig_P3 * (((var1 >> 2) * (var1 >> 2)) >> 13)) >> 3)
-            + (((int32_t)calib.dig_P2 * var1) >> 1)) >> 18;
+    // Reset del sensor
+    BME280_WriteReg(BME280_REG_RESET, 0xB6);
+    __delay_ms(100);
 
-    var1 = ((32768L + var1) * (int32_t)calib.dig_P1) >> 15;
-    if (var1 == 0) return 0;
-
-    p = ((uint32_t)(1048576L - adc_P) - (uint32_t)(var2 >> 12)) * 3125UL;
-    p = (p < 0x80000000UL) ? (p << 1) / (uint32_t)var1
-                            : (p / (uint32_t)var1) * 2;
-
-    var1 = ((int32_t)calib.dig_P9
-            * (int32_t)(((p >> 3) * (p >> 3)) >> 13)) >> 12;
-    var2 = ((int32_t)(p >> 2) * (int32_t)calib.dig_P8) >> 13;
-
-    p = (uint32_t)((int32_t)p + ((var1 + var2 + calib.dig_P7) >> 4));
-    return p;
-}
-
-static uint32_t BME280_CompHumedad(int32_t adc_H) {
-    int32_t v;
-    v = t_fine - 76800L;
-    v = (((adc_H << 14) - ((int32_t)calib.dig_H4 << 20)
-          - ((int32_t)calib.dig_H5 * v)) + 16384L) >> 15;
-    v = v * (((((((v * (int32_t)calib.dig_H6) >> 10)
-                * (((v * (int32_t)calib.dig_H3) >> 11) + 32768L)) >> 10)
-               + 2097152L) * (int32_t)calib.dig_H2 + 8192L) >> 14);
-    v = v - (((((v >> 15) * (v >> 15)) >> 7)
-               * (int32_t)calib.dig_H1) >> 4);
-    if (v < 0)          v = 0;
-    if (v > 419430400L) v = 419430400L;
-    return (uint32_t)((v >> 12) * 10 / 256);
-}
-
-uint8_t BME280_Init(void) {
-    uint8_t id = BME280_LeerByte(BME280_REG_ID);
-    if (id != 0x60) return 0;
-
-    BME280_Escribir(BME280_REG_RESET, 0xB6);
-    __delay_ms(10);
-
+    // Leer coeficientes de calibracion
     BME280_LeerCalibracion();
 
-    BME280_Escribir(BME280_REG_CTRL_HUM,  0x01);
-    BME280_Escribir(BME280_REG_CTRL_MEAS, 0x27);
-    BME280_Escribir(BME280_REG_CONFIG,    0xA0);
+    // Configurar humedad: oversampling x1 (precision normal)
+    // IMPORTANTE: este registro debe escribirse ANTES del ctrl_meas
+    BME280_WriteReg(BME280_REG_CTRL_HUM, 0x01);
 
-    __delay_ms(100);
-    return 1;
+    BME280_WriteReg(BME280_REG_CTRL_MSR, 0x23);
+
+    // Standby 1000ms entre mediciones, filtro off
+    BME280_WriteReg(BME280_REG_CONFIG, 0xA0);
+
+    __delay_ms(200);  // Espera primera medicion
+
+    return 1;  // Sensor OK
 }
 
-void BME280_LeerDatos(BME280_Data *data) {
-    uint8_t buf[8];
-    int32_t adc_P, adc_T, adc_H;
-    int32_t temp_cruda;
+float BME280_ReadHumidity(void) {
+    unsigned char msb, lsb;
+    long adc_H;
+    long x1;
+    float humedad;
 
-    BME280_LeerBytes(BME280_REG_DATA_START, buf, 8);
+    // Paso 1: Actualizar t_fine con temperatura actual
+    BME280_CalcularTFine();
 
-    adc_P = ((int32_t)buf[0] << 12) | ((int32_t)buf[1] << 4) | (buf[2] >> 4);
-    adc_T = ((int32_t)buf[3] << 12) | ((int32_t)buf[4] << 4) | (buf[5] >> 4);
-    adc_H = ((int32_t)buf[6] << 8)  |  buf[7];
+    // Paso 2: Leer 2 bytes de humedad cruda (0xFD y 0xFE)
+    msb   = BME280_ReadReg(0xFD);
+    lsb   = BME280_ReadReg(0xFE);
+    adc_H = ((long)msb << 8) | lsb;
 
-    temp_cruda        = BME280_CompTemp(adc_T);
-    data->temperatura = temp_cruda / 10;
-    data->presion     = BME280_CompPresion(adc_P);
-    data->humedad     = BME280_CompHumedad(adc_H);
+    // Paso 3: Compensacion segun formula del datasheet BME280
+    x1 = t_fine - 76800L;
+
+    x1 = (((((adc_H << 14) -
+             ((long)dig_H4 << 20) -
+             ((long)dig_H5 * x1)) +
+            16384L) >> 15) *
+           (((((((x1 * (long)dig_H6) >> 10) *
+               (((x1 * (long)dig_H3) >> 11) + 32768L)) >> 10) +
+              2097152L) * (long)dig_H2 + 8192L) >> 14));
+
+    x1 = x1 - (((((x1 >> 15) * (x1 >> 15)) >> 7) *
+                 (long)dig_H1) >> 4);
+
+    // Limitar al rango valido
+    if(x1 < 0)          x1 = 0;
+    if(x1 > 419430400L) x1 = 419430400L;
+
+    // Convertir a float %RH
+    humedad = (float)(x1 >> 12) / 1024.0;
+
+    // Limitar rango fisico real
+    if(humedad < 0.0)   humedad = 0.0;
+    if(humedad > 100.0) humedad = 100.0;
+
+    return humedad;
 }

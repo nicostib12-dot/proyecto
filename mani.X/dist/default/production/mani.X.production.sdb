@@ -3,6 +3,18 @@
 [d edition pro ]
 [d chip 18F4550 ]
 [d frameptr 4065 ]
+"17 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\bme280.c
+[v _BME280_WriteReg BME280_WriteReg `(v  1 s 1 BME280_WriteReg ]
+"27
+[v _BME280_ReadReg BME280_ReadReg `(uc  1 s 1 BME280_ReadReg ]
+"54
+[v _BME280_ReadInt16 BME280_ReadInt16 `(i  1 s 2 BME280_ReadInt16 ]
+"62
+[v _BME280_ReadUInt16 BME280_ReadUInt16 `(ui  1 s 2 BME280_ReadUInt16 ]
+"69
+[v _BME280_LeerCalibracion BME280_LeerCalibracion `(v  1 s 1 BME280_LeerCalibracion ]
+"92
+[v _BME280_CalcularTFine BME280_CalcularTFine `(v  1 s 1 BME280_CalcularTFine ]
 "7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\__lldiv.c
 [v ___lldiv __lldiv `(ul  1 e 4 0 ]
 "7 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\aldiv.c
@@ -123,6 +135,24 @@
 [v _OLED_Print OLED_Print `(v  1 e 1 0 ]
 "4 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X/font5x8.h
 [v _font5x8 font5x8 `C[95][5]uc  1 e 475 0 ]
+"4 C:\Users\david\OneDrive\Desktop\proyec\proyecto\mani.X\bme280.c
+[v _dig_T1 dig_T1 `ui  1 s 2 dig_T1 ]
+"5
+[v _dig_T2 dig_T2 `i  1 s 2 dig_T2 ]
+[v _dig_T3 dig_T3 `i  1 s 2 dig_T3 ]
+"8
+[v _dig_H1 dig_H1 `uc  1 s 1 dig_H1 ]
+"9
+[v _dig_H2 dig_H2 `i  1 s 2 dig_H2 ]
+"10
+[v _dig_H3 dig_H3 `uc  1 s 1 dig_H3 ]
+"11
+[v _dig_H4 dig_H4 `i  1 s 2 dig_H4 ]
+[v _dig_H5 dig_H5 `i  1 s 2 dig_H5 ]
+"12
+[v _dig_H6 dig_H6 `c  1 s 1 dig_H6 ]
+"15
+[v _t_fine t_fine `l  1 s 4 t_fine ]
 "648 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h
 [v _UCON UCON `VEuc  1 e 1 @3949 ]
 "763
@@ -226,6 +256,72 @@
 [v _SSPCON1 SSPCON1 `VEuc  1 e 1 @4038 ]
 "6938
 [v _SSPSTAT SSPSTAT `VEuc  1 e 1 @4039 ]
+[s S522 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_NOT_W 1 0 :1:2 
+]
+"7021
+[s S525 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 D_NOT_A 1 0 :1:5 
+]
+[s S528 . 1 `uc 1 BF 1 0 :1:0 
+`uc 1 UA 1 0 :1:1 
+`uc 1 R_nW 1 0 :1:2 
+`uc 1 S 1 0 :1:3 
+`uc 1 P 1 0 :1:4 
+`uc 1 D_nA 1 0 :1:5 
+`uc 1 CKE 1 0 :1:6 
+`uc 1 SMP 1 0 :1:7 
+]
+[s S537 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D_A 1 0 :1:5 
+]
+[s S542 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 I2C_READ 1 0 :1:2 
+`uc 1 I2C_START 1 0 :1:3 
+`uc 1 I2C_STOP 1 0 :1:4 
+`uc 1 I2C_DAT 1 0 :1:5 
+]
+[s S548 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nW 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nA 1 0 :1:5 
+]
+[s S553 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_WRITE 1 0 :1:2 
+]
+[s S556 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_ADDRESS 1 0 :1:5 
+]
+[s S559 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nWRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 nADDRESS 1 0 :1:5 
+]
+[s S564 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 READ_WRITE 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DATA_ADDRESS 1 0 :1:5 
+]
+[s S569 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 R 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 D 1 0 :1:5 
+]
+[s S574 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RW 1 0 :1:2 
+`uc 1 START 1 0 :1:3 
+`uc 1 STOP 1 0 :1:4 
+`uc 1 DA 1 0 :1:5 
+]
+[s S580 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_W 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 NOT_A 1 0 :1:5 
+]
+[u S585 . 1 `S522 1 . 1 0 `S525 1 . 1 0 `S528 1 . 1 0 `S537 1 . 1 0 `S542 1 . 1 0 `S548 1 . 1 0 `S553 1 . 1 0 `S556 1 . 1 0 `S559 1 . 1 0 `S564 1 . 1 0 `S569 1 . 1 0 `S574 1 . 1 0 `S580 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES585  1 e 1 @4039 ]
 "7186
 [v _SSPADD SSPADD `VEuc  1 e 1 @4040 ]
 "7193
@@ -512,60 +608,59 @@
 [v _powf powf `JJ(f  1 e 4 0 ]
 {
 "203
-[v powf@s2 s2 `f  1 a 4 136 ]
-[u S1092 fui 4 `f 1 f 4 0 `ul 1 u 4 0 `l 1 i 4 0 ]
+[v powf@s2 s2 `f  1 a 4 144 ]
+[u S1308 fui 4 `f 1 f 4 0 `ul 1 u 4 0 `l 1 i 4 0 ]
 "202
-[v powf@s_h s_h `S1092  1 a 4 108 ]
-[v powf@t_h t_h `S1092  1 a 4 104 ]
+[v powf@s_h s_h `S1308  1 a 4 116 ]
+[v powf@t_h t_h `S1308  1 a 4 112 ]
 "203
-[v powf@t_l t_l `f  1 a 4 44 ]
-[v powf@s_l s_l `f  1 a 4 36 ]
-[u S1092 fui 4 `f 1 f 4 0 `ul 1 u 4 0 `l 1 i 4 0 ]
+[v powf@t_l t_l `f  1 a 4 52 ]
+[v powf@s_l s_l `f  1 a 4 48 ]
+[u S1308 fui 4 `f 1 f 4 0 `ul 1 u 4 0 `l 1 i 4 0 ]
 "65
-[v powf@z z `S1092  1 a 4 172 ]
-[v powf@t t `S1092  1 a 4 168 ]
-[v powf@ix ix `S1092  1 a 4 164 ]
+[v powf@z z `S1308  1 a 4 180 ]
+[v powf@t t `S1308  1 a 4 176 ]
+[v powf@ix ix `S1308  1 a 4 172 ]
 "59
-[v powf@j j `l  1 a 4 160 ]
-[v powf@k k `l  1 a 4 156 ]
+[v powf@j j `l  1 a 4 168 ]
+[v powf@k k `l  1 a 4 164 ]
 "65
-[v powf@p_h p_h `S1092  1 a 4 152 ]
-[v powf@is is `S1092  1 a 4 144 ]
+[v powf@p_h p_h `S1308  1 a 4 160 ]
 "59
-[v powf@iy iy `l  1 a 4 140 ]
+[v powf@iy iy `l  1 a 4 156 ]
 "65
-[v powf@t1 t1 `S1092  1 a 4 132 ]
+[v powf@is is `S1308  1 a 4 148 ]
+[v powf@t1 t1 `S1308  1 a 4 140 ]
+[v powf@hy hy `S1308  1 a 4 136 ]
 "59
-[v powf@n n `l  1 a 4 128 ]
-"65
-[v powf@hy hy `S1092  1 a 4 124 ]
+[v powf@n n `l  1 a 4 132 ]
 "58
-[v powf@v v `f  1 a 4 120 ]
-[v powf@u u `f  1 a 4 116 ]
+[v powf@v v `f  1 a 4 128 ]
+[v powf@u u `f  1 a 4 124 ]
 "65
-[v powf@ax ax `S1092  1 a 4 112 ]
+[v powf@ax ax `S1308  1 a 4 120 ]
 "57
-[v powf@p_l p_l `f  1 a 4 100 ]
+[v powf@p_l p_l `f  1 a 4 108 ]
 "65
-[v powf@hx hx `S1092  1 a 4 96 ]
+[v powf@hx hx `S1308  1 a 4 104 ]
 "61
-[v powf@sn sn `ul  1 a 4 92 ]
+[v powf@sn sn `ul  1 a 4 100 ]
 "58
-[v powf@s s `f  1 a 4 88 ]
+[v powf@s s `f  1 a 4 96 ]
 "59
-[v powf@yisint yisint `l  1 a 4 76 ]
+[v powf@yisint yisint `l  1 a 4 84 ]
 "58
-[v powf@r r `f  1 a 4 72 ]
-[v powf@w w `f  1 a 4 56 ]
+[v powf@r r `f  1 a 4 80 ]
+[v powf@w w `f  1 a 4 68 ]
 "65
-[v powf@y1 y1 `S1092  1 a 4 32 ]
+[v powf@y1 y1 `S1308  1 a 4 44 ]
 "59
-[v powf@i i `l  1 a 4 28 ]
+[v powf@i i `l  1 a 4 40 ]
 "57
-[v powf@z_l z_l `f  1 a 4 24 ]
-[v powf@z_h z_h `f  1 a 4 20 ]
+[v powf@z_l z_l `f  1 a 4 36 ]
+[v powf@z_h z_h `f  1 a 4 32 ]
 "58
-[v powf@t2 t2 `f  1 a 4 16 ]
+[v powf@t2 t2 `f  1 a 4 28 ]
 "55
 [v powf@x x `f  1 p 4 85 ]
 [v powf@y y `f  1 p 4 89 ]
@@ -574,9 +669,9 @@
 "24 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sqrtf.c
 [v _sqrtf sqrtf `(f  1 e 4 0 ]
 {
-[u S1215 . 4 `f 1 f 4 0 `l 1 i 4 0 ]
+[u S1431 . 4 `f 1 f 4 0 `l 1 i 4 0 ]
 "29
-[v sqrtf@ix ix `S1215  1 a 4 33 ]
+[v sqrtf@ix ix `S1431  1 a 4 33 ]
 "28
 [v sqrtf@r r `ul  1 a 4 29 ]
 "27
@@ -594,9 +689,9 @@
 {
 "7
 [v scalbnf@y y `f  1 a 4 74 ]
-[u S1205 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+[u S1421 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
 "6
-[v scalbnf@u u `S1205  1 a 4 70 ]
+[v scalbnf@u u `S1421  1 a 4 70 ]
 "4
 [v scalbnf@x x `f  1 p 4 60 ]
 [v scalbnf@n n `i  1 p 2 64 ]
@@ -605,21 +700,21 @@
 "8 C:\Program Files\Microchip\xc8\v3.10\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
-[s S957 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+[s S1173 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
 "13
-[s S962 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
-[u S965 . 4 `l 1 i 4 0 `d 1 f 4 0 `S957 1 fAsBytes 4 0 `S962 1 fAsWords 4 0 ]
-[v ___flmul@prod prod `S965  1 a 4 54 ]
+[s S1178 . 4 `s 1 wordA 2 0 `s 1 wordB 2 2 ]
+[u S1181 . 4 `l 1 i 4 0 `d 1 f 4 0 `S1173 1 fAsBytes 4 0 `S1178 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S1181  1 a 4 54 ]
 "12
-[v ___flmul@grs grs `ul  1 a 4 49 ]
-[s S1033 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+[v ___flmul@grs grs `ul  1 a 4 48 ]
+[s S1249 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
 "14
-[u S1036 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1033 1 nAsBytes 2 0 ]
-[v ___flmul@temp temp `S1036  1 a 2 58 ]
+[u S1252 . 2 `s 1 i 2 0 `us 1 n 2 0 `S1249 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S1252  1 a 2 58 ]
 "10
 [v ___flmul@bexp bexp `uc  1 a 1 53 ]
 "11
-[v ___flmul@aexp aexp `uc  1 a 1 48 ]
+[v ___flmul@aexp aexp `uc  1 a 1 52 ]
 "9
 [v ___flmul@sign sign `uc  1 a 1 47 ]
 "8

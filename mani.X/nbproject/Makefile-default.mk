@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=man.c i2c.c ssd1306.c lm35.c mq135.c
+SOURCEFILES_QUOTED_IF_SPACED=man.c i2c.c ssd1306.c lm35.c mq135.c bme280.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/man.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/ssd1306.p1 ${OBJECTDIR}/lm35.p1 ${OBJECTDIR}/mq135.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/man.p1.d ${OBJECTDIR}/i2c.p1.d ${OBJECTDIR}/ssd1306.p1.d ${OBJECTDIR}/lm35.p1.d ${OBJECTDIR}/mq135.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/man.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/ssd1306.p1 ${OBJECTDIR}/lm35.p1 ${OBJECTDIR}/mq135.p1 ${OBJECTDIR}/bme280.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/man.p1.d ${OBJECTDIR}/i2c.p1.d ${OBJECTDIR}/ssd1306.p1.d ${OBJECTDIR}/lm35.p1.d ${OBJECTDIR}/mq135.p1.d ${OBJECTDIR}/bme280.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/man.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/ssd1306.p1 ${OBJECTDIR}/lm35.p1 ${OBJECTDIR}/mq135.p1
+OBJECTFILES=${OBJECTDIR}/man.p1 ${OBJECTDIR}/i2c.p1 ${OBJECTDIR}/ssd1306.p1 ${OBJECTDIR}/lm35.p1 ${OBJECTDIR}/mq135.p1 ${OBJECTDIR}/bme280.p1
 
 # Source Files
-SOURCEFILES=man.c i2c.c ssd1306.c lm35.c mq135.c
+SOURCEFILES=man.c i2c.c ssd1306.c lm35.c mq135.c bme280.c
 
 
 
@@ -128,6 +128,14 @@ ${OBJECTDIR}/mq135.p1: mq135.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/mq135.d ${OBJECTDIR}/mq135.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/mq135.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
+${OBJECTDIR}/bme280.p1: bme280.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/bme280.p1.d 
+	@${RM} ${OBJECTDIR}/bme280.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/bme280.p1 bme280.c 
+	@-${MV} ${OBJECTDIR}/bme280.d ${OBJECTDIR}/bme280.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/bme280.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
 else
 ${OBJECTDIR}/man.p1: man.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
@@ -168,6 +176,14 @@ ${OBJECTDIR}/mq135.p1: mq135.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/mq135.p1 mq135.c 
 	@-${MV} ${OBJECTDIR}/mq135.d ${OBJECTDIR}/mq135.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/mq135.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/bme280.p1: bme280.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/bme280.p1.d 
+	@${RM} ${OBJECTDIR}/bme280.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/bme280.p1 bme280.c 
+	@-${MV} ${OBJECTDIR}/bme280.d ${OBJECTDIR}/bme280.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/bme280.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 
