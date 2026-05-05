@@ -1,69 +1,90 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[p mainexit ]
-"7986 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7986: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
-[v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
-"7992
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7992:     struct {
-[s S344 :2 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 ]
-[n S344 . SCS IOFS OSTS IRCF IDLEN ]
-"7999
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7999:     struct {
-[s S345 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S345 . SCS0 SCS1 FLTS . IRCF0 IRCF1 IRCF2 ]
-"7991
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7991: typedef union {
-[u S343 `S344 1 `S345 1 ]
-[n S343 . . . ]
-"8009
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 8009: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0xFD3)));
-[v _OSCCONbits `VS343 ~T0 @X0 0 e@4051 ]
+"8 ./i12c.h
+[; ;./i12c.h: 8: void I2C_Start(void);
+[v _I2C_Start `(v ~T0 @X0 0 ef ]
+"11
+[; ;./i12c.h: 11: unsigned char I2C_Write(unsigned char data);
+[v _I2C_Write `(uc ~T0 @X0 0 ef1`uc ]
+"9
+[; ;./i12c.h: 9: void I2C_Stop(void);
+[v _I2C_Stop `(v ~T0 @X0 0 ef ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.10\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
 [p i __delay ]
-"5587 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 5587: extern volatile unsigned char CMCON __attribute__((address(0xFB4)));
-[v _CMCON `Vuc ~T0 @X0 0 e@4020 ]
-"10 ./lm35.h
-[; ;./lm35.h: 10: void ADC_Init(void);
-[v _ADC_Init `(v ~T0 @X0 0 ef ]
-"26 ./mq135.h
-[; ;./mq135.h: 26: void MQ135_Init(void);
-[v _MQ135_Init `(v ~T0 @X0 0 ef ]
-"26 ./bme280.h
-[; ;./bme280.h: 26: unsigned char BME280_Init(void);
-[v _BME280_Init `(uc ~T0 @X0 0 ef ]
-"21 ./bh1750.h
-[; ;./bh1750.h: 21: void BH1750_Init(void);
-[v _BH1750_Init `(v ~T0 @X0 0 ef ]
-"7 ./i12c.h
-[; ;./i12c.h: 7: void I2C_Init(void);
-[v _I2C_Init `(v ~T0 @X0 0 ef ]
-"12 ./ssd1306.h
-[; ;./ssd1306.h: 12: void OLED_Init(void);
-[v _OLED_Init `(v ~T0 @X0 0 ef ]
-"16
-[; ;./ssd1306.h: 16: void OLED_Print(unsigned char page, unsigned char col, const char *str);
-[v _OLED_Print `(v ~T0 @X0 0 ef3`uc`uc`*Cuc ]
-"27 ./bme280.h
-[; ;./bme280.h: 27: float BME280_ReadHumidity(void);
-[v _BME280_ReadHumidity `(f ~T0 @X0 0 ef ]
-"27 ./mq135.h
-[; ;./mq135.h: 27: float MQ135_LeerADC(void);
-[v _MQ135_LeerADC `(f ~T0 @X0 0 ef ]
-"28
-[; ;./mq135.h: 28: float MQ135_calcularRs(float adc);
-[v _MQ135_calcularRs `(f ~T0 @X0 0 ef1`f ]
-"29
-[; ;./mq135.h: 29: float MQ135_calcularPPM(float rs, float r0);
-[v _MQ135_calcularPPM `(f ~T0 @X0 0 ef2`f`f ]
-"11 ./lm35.h
-[; ;./lm35.h: 11: float leerTemperatura(void);
-[v _leerTemperatura `(f ~T0 @X0 0 ef ]
-"22 ./bh1750.h
-[; ;./bh1750.h: 22: float BH1750_ReadLux(void);
-[v _BH1750_ReadLux `(f ~T0 @X0 0 ef ]
+"6812 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6812:     struct {
+[s S282 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S282 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"6811
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6811: typedef union {
+[u S281 `S282 1 ]
+[n S281 . . ]
+"6823
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6823: extern volatile SSPCON2bits_t SSPCON2bits __attribute__((address(0xFC5)));
+[v _SSPCON2bits `VS281 ~T0 @X0 0 e@4037 ]
+"6944
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6944:     struct {
+[s S287 :2 `uc 1 :1 `uc 1 ]
+[n S287 . . R_NOT_W ]
+"6948
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6948:     struct {
+[s S288 :5 `uc 1 :1 `uc 1 ]
+[n S288 . . D_NOT_A ]
+"6952
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6952:     struct {
+[s S289 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S289 . BF UA R_nW S P D_nA CKE SMP ]
+"6962
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6962:     struct {
+[s S290 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S290 . . R_W . D_A ]
+"6968
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6968:     struct {
+[s S291 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S291 . . I2C_READ I2C_START I2C_STOP I2C_DAT ]
+"6975
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6975:     struct {
+[s S292 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S292 . . nW . nA ]
+"6981
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6981:     struct {
+[s S293 :2 `uc 1 :1 `uc 1 ]
+[n S293 . . NOT_WRITE ]
+"6985
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6985:     struct {
+[s S294 :5 `uc 1 :1 `uc 1 ]
+[n S294 . . NOT_ADDRESS ]
+"6989
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6989:     struct {
+[s S295 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S295 . . nWRITE . nADDRESS ]
+"6995
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6995:     struct {
+[s S296 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S296 . . READ_WRITE . DATA_ADDRESS ]
+"7001
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7001:     struct {
+[s S297 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S297 . . R . D ]
+"7007
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7007:     struct {
+[s S298 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S298 . . RW START STOP DA ]
+"7014
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7014:     struct {
+[s S299 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S299 . . NOT_W . NOT_A ]
+"6943
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 6943: typedef union {
+[u S286 `S287 1 `S288 1 `S289 1 `S290 1 `S291 1 `S292 1 `S293 1 `S294 1 `S295 1 `S296 1 `S297 1 `S298 1 `S299 1 ]
+[n S286 . . . . . . . . . . . . . . ]
+"7021
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7021: extern volatile SSPSTATbits_t SSPSTATbits __attribute__((address(0xFC7)));
+[v _SSPSTATbits `VS286 ~T0 @X0 0 e@4039 ]
+"7193
+[; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 7193: extern volatile unsigned char SSPBUF __attribute__((address(0xFC9)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@4041 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 54: __asm("SPPDATA equ 0F62h");
 [; <" SPPDATA equ 0F62h ;# ">
@@ -574,438 +595,197 @@ Version 4.0 HI-TECH Software Intermediate Code
 "8893
 [; ;C:/Program Files/Microchip/MPLABX/v6.20/packs/Microchip/PIC18Fxxxx_DFP/1.6.159/xc8\pic\include\proc/pic18f4550.h: 8893: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"9 man.c
-[; ;man.c: 9:     decimal = (unsigned char)((num - (float)entero) * 10.0);
-[p x FOSC      =  INTOSC_HS ]
-"10
-[; ;man.c: 10:     buf[0] = (char)((entero / 10) + '0');
-[p x CPUDIV  =  OSC1_PLL2 ]
-"11
-[; ;man.c: 11:     buf[1] = (char)((entero % 10) + '0');
-[p x PLLDIV  =  1 ]
-"12
-[; ;man.c: 12:     buf[2] = '.';
-[p x WDT        =  OFF ]
-"13
-[; ;man.c: 13:     buf[3] = (char)(decimal + '0');
-[p x PWRT      =  ON ]
-"14
-[; ;man.c: 14:     buf[4] = ' ';
-[p x BOR        =  OFF ]
-"15
-[; ;man.c: 15:     buf[5] = '\0';
-[p x LVP        =  OFF ]
-"16
-[; ;man.c: 16: }
-[p x MCLRE    =  ON ]
-"17
-[; ;man.c: 17: 
-[p x PBADEN  =  OFF ]
-"18
-[; ;man.c: 18: void ppmStr(unsigned int ppm, char *buf) {
-[p x DEBUG    =  OFF ]
-"23
-[; ;man.c: 23:     buf[2] = (char)(((ppm % 100)/10) + '0');
-[v _floatStr `(v ~T0 @X0 1 ef3`f`*uc`uc ]
+"8 bh1750.c
+[; ;bh1750.c: 8: static void BH1750_SendCmd(unsigned char cmd) {
+[v _BH1750_SendCmd `(v ~T0 @X0 1 sf1`uc ]
 {
-[e :U _floatStr ]
-[v _num `f ~T0 @X0 1 r1 ]
-[v _buf `*uc ~T0 @X0 1 r2 ]
-[v _maxVal `uc ~T0 @X0 1 r3 ]
+[e :U _BH1750_SendCmd ]
+[v _cmd `uc ~T0 @X0 1 r1 ]
 [f ]
-"24
-[; ;man.c: 24:     buf[3] = (char)((ppm % 10) + '0');
-[v _i `uc ~T0 @X0 1 a ]
-[v _entero `uc ~T0 @X0 1 a ]
-[v _decimal `uc ~T0 @X0 1 a ]
-"25
-[; ;man.c: 25:     buf[4] = ' ';
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 368  ]
-[e $U 369  ]
-[e :U 368 ]
-[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux -> -> 32 `ui `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 368  ]
-[e :U 369 ]
-}
-"26
-[; ;man.c: 26:     buf[5] = '\0';
-[e $ ! < -> _num `d .0.0 371  ]
-[e = _num -> .0.0 `f ]
-[e :U 371 ]
-"27
-[; ;man.c: 27: }
-[e $ ! > _num -> _maxVal `f 372  ]
-[e = _num -> _maxVal `f ]
-[e :U 372 ]
-"28
-[; ;man.c: 28: 
-[e = _entero -> _num `uc ]
-"29
-[; ;man.c: 29: void humStr(float num, char *buf) {
-[e = _decimal -> * -> - _num -> _entero `f `d .10.0 `uc ]
-"30
-[; ;man.c: 30:     unsigned char i, entero, decimal;
-[e = *U + _buf * -> -> 0 `i `x -> -> # *U _buf `i `x -> + -> / -> _entero `i -> 10 `i `ui -> 48 `ui `uc ]
-"31
-[; ;man.c: 31:     for(i = 0; i < 10; i++) buf[i] = ' ';
-[e = *U + _buf * -> -> 1 `i `x -> -> # *U _buf `i `x -> + -> % -> _entero `i -> 10 `i `ui -> 48 `ui `uc ]
-"32
-[; ;man.c: 32:     if(num < 0.0) num = 0.0;
-[e = *U + _buf * -> -> 2 `i `x -> -> # *U _buf `i `x -> -> 46 `ui `uc ]
-"33
-[; ;man.c: 33:     if(num > 100.0) num = 100.0;
-[e = *U + _buf * -> -> 3 `i `x -> -> # *U _buf `i `x -> + -> _decimal `ui -> 48 `ui `uc ]
-"34
-[; ;man.c: 34:     entero = (unsigned char)num;
-[e = *U + _buf * -> -> 4 `i `x -> -> # *U _buf `i `x -> -> 32 `ui `uc ]
-"35
-[; ;man.c: 35:     decimal = (unsigned char)((num - (float)entero) * 10.0);
-[e = *U + _buf * -> -> 5 `i `x -> -> # *U _buf `i `x -> -> 0 `ui `uc ]
-"36
-[; ;man.c: 36:     buf[0] = (char)((entero / 10) + '0');
+"9
+[; ;bh1750.c: 9:     I2C_Start();
+[e ( _I2C_Start ..  ]
+"10
+[; ;bh1750.c: 10:     I2C_Write(0x46);
+[e ( _I2C_Write (1 -> -> 70 `i `uc ]
+"11
+[; ;bh1750.c: 11:     I2C_Write(cmd);
+[e ( _I2C_Write (1 _cmd ]
+"12
+[; ;bh1750.c: 12:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"13
+[; ;bh1750.c: 13:     _delay((unsigned long)((5)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"14
+[; ;bh1750.c: 14: }
 [e :UE 367 ]
 }
-"38
-[; ;man.c: 38:     buf[2] = '.';
-[v _ppmStr `(v ~T0 @X0 1 ef2`ui`*uc ]
+"16
+[; ;bh1750.c: 16: static unsigned int BH1750_LeerBytes(void) {
+[v _BH1750_LeerBytes `(ui ~T0 @X0 1 sf ]
 {
-[e :U _ppmStr ]
-[v _ppm `ui ~T0 @X0 1 r1 ]
-[v _buf `*uc ~T0 @X0 1 r2 ]
+[e :U _BH1750_LeerBytes ]
 [f ]
-"39
-[; ;man.c: 39:     buf[3] = (char)(decimal + '0');
-[v _i `uc ~T0 @X0 1 a ]
-"40
-[; ;man.c: 40:     buf[4] = '%';
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 8 `i 374  ]
-[e $U 375  ]
+"17
+[; ;bh1750.c: 17:     unsigned char msb, lsb;
+[v _msb `uc ~T0 @X0 1 a ]
+[v _lsb `uc ~T0 @X0 1 a ]
+"18
+[; ;bh1750.c: 18:     unsigned int resultado;
+[v _resultado `ui ~T0 @X0 1 a ]
+"20
+[; ;bh1750.c: 20:     I2C_Start();
+[e ( _I2C_Start ..  ]
+"21
+[; ;bh1750.c: 21:     I2C_Write(0x46 | 0x01);
+[e ( _I2C_Write (1 -> | -> 70 `i -> 1 `i `uc ]
+"24
+[; ;bh1750.c: 24:     SSPCON2bits.RCEN = 1;
+[e = . . _SSPCON2bits 0 3 -> -> 1 `i `uc ]
+"25
+[; ;bh1750.c: 25:     while(!SSPSTATbits.BF);
+[e $U 369  ]
+[e :U 370 ]
+[e :U 369 ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> 0 `i 370  ]
+[e :U 371 ]
+"26
+[; ;bh1750.c: 26:     msb = SSPBUF;
+[e = _msb _SSPBUF ]
+"27
+[; ;bh1750.c: 27:     SSPCON2bits.ACKDT = 0;
+[e = . . _SSPCON2bits 0 5 -> -> 0 `i `uc ]
+"28
+[; ;bh1750.c: 28:     SSPCON2bits.ACKEN = 1;
+[e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
+"29
+[; ;bh1750.c: 29:     while(SSPCON2bits.ACKEN);
+[e $U 372  ]
+[e :U 373 ]
+[e :U 372 ]
+[e $ != -> . . _SSPCON2bits 0 4 `i -> 0 `i 373  ]
 [e :U 374 ]
-[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux -> -> 32 `ui `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 8 `i 374  ]
+"32
+[; ;bh1750.c: 32:     SSPCON2bits.RCEN = 1;
+[e = . . _SSPCON2bits 0 3 -> -> 1 `i `uc ]
+"33
+[; ;bh1750.c: 33:     while(!SSPSTATbits.BF);
+[e $U 375  ]
+[e :U 376 ]
 [e :U 375 ]
-}
-"41
-[; ;man.c: 41:     buf[5] = ' ';
-[e = *U + _buf * -> -> 0 `i `x -> -> # *U _buf `i `x -> + / _ppm -> -> 1000 `i `ui -> 48 `ui `uc ]
-"42
-[; ;man.c: 42:     buf[6] = '\0';
-[e = *U + _buf * -> -> 1 `i `x -> -> # *U _buf `i `x -> + / % _ppm -> -> 1000 `i `ui -> -> 100 `i `ui -> 48 `ui `uc ]
-"43
-[; ;man.c: 43: }
-[e = *U + _buf * -> -> 2 `i `x -> -> # *U _buf `i `x -> + / % _ppm -> -> 100 `i `ui -> -> 10 `i `ui -> 48 `ui `uc ]
-"44
-[; ;man.c: 44: 
-[e = *U + _buf * -> -> 3 `i `x -> -> # *U _buf `i `x -> + % _ppm -> -> 10 `i `ui -> 48 `ui `uc ]
-"45
-[; ;man.c: 45: void luxStr(float lux, char *buf) {
-[e = *U + _buf * -> -> 4 `i `x -> -> # *U _buf `i `x -> -> 32 `ui `uc ]
-"46
-[; ;man.c: 46:     unsigned int val;
-[e = *U + _buf * -> -> 5 `i `x -> -> # *U _buf `i `x -> -> 0 `ui `uc ]
-"47
-[; ;man.c: 47:     unsigned char i;
-[e :UE 373 ]
-}
-"49
-[; ;man.c: 49:     if(lux < 0.0) lux = 0.0;
-[v _humStr `(v ~T0 @X0 1 ef2`f`*uc ]
-{
-[e :U _humStr ]
-[v _num `f ~T0 @X0 1 r1 ]
-[v _buf `*uc ~T0 @X0 1 r2 ]
-[f ]
-"50
-[; ;man.c: 50:     if(lux > 9999.0) lux = 9999.0;
-[v _i `uc ~T0 @X0 1 a ]
-[v _entero `uc ~T0 @X0 1 a ]
-[v _decimal `uc ~T0 @X0 1 a ]
-"51
-[; ;man.c: 51:     val = (unsigned int)lux;
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 378  ]
-[e $U 379  ]
-[e :U 378 ]
-[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux -> -> 32 `ui `uc ]
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 378  ]
+[e $ ! != -> . . _SSPSTATbits 2 0 `i -> 0 `i 376  ]
+[e :U 377 ]
+"34
+[; ;bh1750.c: 34:     lsb = SSPBUF;
+[e = _lsb _SSPBUF ]
+"35
+[; ;bh1750.c: 35:     SSPCON2bits.ACKDT = 1;
+[e = . . _SSPCON2bits 0 5 -> -> 1 `i `uc ]
+"36
+[; ;bh1750.c: 36:     SSPCON2bits.ACKEN = 1;
+[e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
+"37
+[; ;bh1750.c: 37:     while(SSPCON2bits.ACKEN);
+[e $U 378  ]
 [e :U 379 ]
+[e :U 378 ]
+[e $ != -> . . _SSPCON2bits 0 4 `i -> 0 `i 379  ]
+[e :U 380 ]
+"39
+[; ;bh1750.c: 39:     I2C_Stop();
+[e ( _I2C_Stop ..  ]
+"42
+[; ;bh1750.c: 42:     resultado = ((unsigned int)msb << 8) | lsb;
+[e = _resultado | << -> _msb `ui -> 8 `i -> _lsb `ui ]
+"43
+[; ;bh1750.c: 43:     return resultado;
+[e ) _resultado ]
+[e $UE 368  ]
+"44
+[; ;bh1750.c: 44: }
+[e :UE 368 ]
 }
-"52
-[; ;man.c: 52:     buf[0] = (char)((val / 1000) + '0');
-[e $ ! < -> _num `d .0.0 381  ]
-[e = _num -> .0.0 `f ]
-[e :U 381 ]
-"53
-[; ;man.c: 53:     buf[1] = (char)(((val % 1000)/100) + '0');
-[e $ ! > -> _num `d .100.0 382  ]
-[e = _num -> .100.0 `f ]
-[e :U 382 ]
-"54
-[; ;man.c: 54:     buf[2] = (char)(((val % 100)/10) + '0');
-[e = _entero -> _num `uc ]
-"55
-[; ;man.c: 55:     buf[3] = (char)((val % 10) + '0');
-[e = _decimal -> * -> - _num -> _entero `f `d .10.0 `uc ]
-"56
-[; ;man.c: 56:     buf[4] = ' ';
-[e = *U + _buf * -> -> 0 `i `x -> -> # *U _buf `i `x -> + -> / -> _entero `i -> 10 `i `ui -> 48 `ui `uc ]
-"57
-[; ;man.c: 57:     buf[5] = 'l';
-[e = *U + _buf * -> -> 1 `i `x -> -> # *U _buf `i `x -> + -> % -> _entero `i -> 10 `i `ui -> 48 `ui `uc ]
-"58
-[; ;man.c: 58:     buf[6] = 'x';
-[e = *U + _buf * -> -> 2 `i `x -> -> # *U _buf `i `x -> -> 46 `ui `uc ]
-"59
-[; ;man.c: 59:     buf[7] = ' ';
-[e = *U + _buf * -> -> 3 `i `x -> -> # *U _buf `i `x -> + -> _decimal `ui -> 48 `ui `uc ]
-"60
-[; ;man.c: 60:     buf[8] = '\0';
-[e = *U + _buf * -> -> 4 `i `x -> -> # *U _buf `i `x -> -> 37 `ui `uc ]
-"61
-[; ;man.c: 61: }
-[e = *U + _buf * -> -> 5 `i `x -> -> # *U _buf `i `x -> -> 32 `ui `uc ]
-"62
-[; ;man.c: 62: 
-[e = *U + _buf * -> -> 6 `i `x -> -> # *U _buf `i `x -> -> 0 `ui `uc ]
-"63
-[; ;man.c: 63: void main(void) {
-[e :UE 377 ]
-}
-"65
-[; ;man.c: 65:     while(!OSCCONbits.IOFS);
-[v _luxStr `(v ~T0 @X0 1 ef2`f`*uc ]
+"46
+[; ;bh1750.c: 46: void BH1750_Init(void) {
+[v _BH1750_Init `(v ~T0 @X0 1 ef ]
 {
-[e :U _luxStr ]
-[v _lux `f ~T0 @X0 1 r1 ]
-[v _buf `*uc ~T0 @X0 1 r2 ]
+[e :U _BH1750_Init ]
 [f ]
-"66
-[; ;man.c: 66:     _delay((unsigned long)((200)*(8000000UL/4000.0)));
-[v _val `ui ~T0 @X0 1 a ]
-"67
-[; ;man.c: 67:     CMCON = 0x07;
+"47
+[; ;bh1750.c: 47:     _delay((unsigned long)((100)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"49
+[; ;bh1750.c: 49:     BH1750_SendCmd(0x01);
+[e ( _BH1750_SendCmd (1 -> -> 1 `i `uc ]
+"50
+[; ;bh1750.c: 50:     BH1750_SendCmd(0x07);
+[e ( _BH1750_SendCmd (1 -> -> 7 `i `uc ]
+"51
+[; ;bh1750.c: 51:     BH1750_SendCmd(0x10);
+[e ( _BH1750_SendCmd (1 -> -> 16 `i `uc ]
+"54
+[; ;bh1750.c: 54:     _delay((unsigned long)((200)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"55
+[; ;bh1750.c: 55: }
+[e :UE 381 ]
+}
+"57
+[; ;bh1750.c: 57: float BH1750_ReadLux(void) {
+[v _BH1750_ReadLux `(f ~T0 @X0 1 ef ]
+{
+[e :U _BH1750_ReadLux ]
+[f ]
+"58
+[; ;bh1750.c: 58:     unsigned int suma = 0;
+[v _suma `ui ~T0 @X0 1 a ]
+[e = _suma -> -> 0 `i `ui ]
+"59
+[; ;bh1750.c: 59:     unsigned char i;
 [v _i `uc ~T0 @X0 1 a ]
-"68
-[; ;man.c: 68: 
+"60
+[; ;bh1750.c: 60:     float lux;
+[v _lux `f ~T0 @X0 1 a ]
+"63
+[; ;bh1750.c: 63:     for(i = 0; i < 4; i++) {
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 10 `i 384  ]
-[e $U 385  ]
-[e :U 384 ]
-[e = *U + _buf * -> _i `ux -> -> # *U _buf `ui `ux -> -> 32 `ui `uc ]
+[e $ < -> _i `i -> 4 `i 383  ]
+[e $U 384  ]
+[e :U 383 ]
+{
+"64
+[; ;bh1750.c: 64:         suma += BH1750_LeerBytes();
+[e =+ _suma ( _BH1750_LeerBytes ..  ]
+"65
+[; ;bh1750.c: 65:         _delay((unsigned long)((200)*(8000000UL/4000.0)));
+[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
+"66
+[; ;bh1750.c: 66:     }
+}
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 10 `i 384  ]
-[e :U 385 ]
+[e $ < -> _i `i -> 4 `i 383  ]
+[e :U 384 ]
 }
 "69
-[; ;man.c: 69:     ADC_Init();
-[e $ ! < -> _lux `d .0.0 387  ]
-[e = _lux -> .0.0 `f ]
-[e :U 387 ]
-"70
-[; ;man.c: 70:     MQ135_Init();
-[e $ ! > -> _lux `d .9999.0 388  ]
-[e = _lux -> .9999.0 `f ]
-[e :U 388 ]
-"71
-[; ;man.c: 71:     unsigned char bme_ok = BME280_Init();
-[e = _val -> _lux `ui ]
+[; ;bh1750.c: 69:     lux = (float)(suma / 4) / 1.2;
+[e = _lux -> / -> -> / _suma -> -> 4 `i `ui `f `d .1.2 `f ]
 "72
-[; ;man.c: 72:     BH1750_Init();
-[e = *U + _buf * -> -> 0 `i `x -> -> # *U _buf `i `x -> + / _val -> -> 1000 `i `ui -> 48 `ui `uc ]
+[; ;bh1750.c: 72:     if(lux < 0.0) lux = 0.0;
+[e $ ! < -> _lux `d .0.0 386  ]
+[e = _lux -> .0.0 `f ]
+[e :U 386 ]
 "73
-[; ;man.c: 73:     I2C_Init();
-[e = *U + _buf * -> -> 1 `i `x -> -> # *U _buf `i `x -> + / % _val -> -> 1000 `i `ui -> -> 100 `i `ui -> 48 `ui `uc ]
-"74
-[; ;man.c: 74:     OLED_Init();
-[e = *U + _buf * -> -> 2 `i `x -> -> # *U _buf `i `x -> + / % _val -> -> 100 `i `ui -> -> 10 `i `ui -> 48 `ui `uc ]
+[; ;bh1750.c: 73:     if(lux > 65535.0) lux = 65535.0;
+[e $ ! > -> _lux `d .65535.0 387  ]
+[e = _lux -> .65535.0 `f ]
+[e :U 387 ]
 "75
-[; ;man.c: 75: 
-[e = *U + _buf * -> -> 3 `i `x -> -> # *U _buf `i `x -> + % _val -> -> 10 `i `ui -> 48 `ui `uc ]
+[; ;bh1750.c: 75:     return lux;
+[e ) _lux ]
+[e $UE 382  ]
 "76
-[; ;man.c: 76: 
-[e = *U + _buf * -> -> 4 `i `x -> -> # *U _buf `i `x -> -> 32 `ui `uc ]
-"77
-[; ;man.c: 77:     OLED_Print(0, 10, "Hum: ");
-[e = *U + _buf * -> -> 5 `i `x -> -> # *U _buf `i `x -> -> 108 `ui `uc ]
-"78
-[; ;man.c: 78:     OLED_Print(2, 10, "Aire:");
-[e = *U + _buf * -> -> 6 `i `x -> -> # *U _buf `i `x -> -> 120 `ui `uc ]
-"79
-[; ;man.c: 79:     OLED_Print(4, 10, "Temp:");
-[e = *U + _buf * -> -> 7 `i `x -> -> # *U _buf `i `x -> -> 32 `ui `uc ]
-"80
-[; ;man.c: 80:     OLED_Print(6, 10, "Luz: ");
-[e = *U + _buf * -> -> 8 `i `x -> -> # *U _buf `i `x -> -> 0 `ui `uc ]
-"81
-[; ;man.c: 81: 
-[e :UE 383 ]
+[; ;bh1750.c: 76: }
+[e :UE 382 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"83
-[; ;man.c: 83:     char bufTemp[10], bufPPM[8];
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[e :U _main ]
-[f ]
-"84
-[; ;man.c: 84:     char bufHum[10], bufLux[10];
-[e = _OSCCON -> -> 114 `i `uc ]
-"85
-[; ;man.c: 85: 
-[e $U 390  ]
-[e :U 391 ]
-[e :U 390 ]
-[e $ ! != -> . . _OSCCONbits 0 1 `i -> 0 `i 391  ]
-[e :U 392 ]
-"86
-[; ;man.c: 86:     while(1) {
-[e ( __delay (1 -> * -> -> 200 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"87
-[; ;man.c: 87: 
-[e = _CMCON -> -> 7 `i `uc ]
-"89
-[; ;man.c: 89:             hum = BME280_ReadHumidity();
-[e ( _ADC_Init ..  ]
-"90
-[; ;man.c: 90:             humStr(hum, bufHum);
-[e ( _MQ135_Init ..  ]
-"91
-[; ;man.c: 91:             OLED_Print(0, 46, "        ");
-[v _bme_ok `uc ~T0 @X0 1 a ]
-[e = _bme_ok ( _BME280_Init ..  ]
-"92
-[; ;man.c: 92:             OLED_Print(0, 46, bufHum);
-[e ( _BH1750_Init ..  ]
-"93
-[; ;man.c: 93:         } else {
-[e ( _I2C_Init ..  ]
-"94
-[; ;man.c: 94:             OLED_Print(0, 46, "ERROR   ");
-[e ( _OLED_Init ..  ]
-"97
-[; ;man.c: 97: 
-[e ( _OLED_Print (3 , , -> -> 0 `i `uc -> -> 10 `i `uc :s 1C ]
-"98
-[; ;man.c: 98:         adc_mq = MQ135_LeerADC();
-[e ( _OLED_Print (3 , , -> -> 2 `i `uc -> -> 10 `i `uc :s 2C ]
-"99
-[; ;man.c: 99:         rs = MQ135_calcularRs(adc_mq);
-[e ( _OLED_Print (3 , , -> -> 4 `i `uc -> -> 10 `i `uc :s 3C ]
-"100
-[; ;man.c: 100:         ppm = MQ135_calcularPPM(rs, 10.0);
-[e ( _OLED_Print (3 , , -> -> 6 `i `uc -> -> 10 `i `uc :s 4C ]
-"102
-[; ;man.c: 102:         OLED_Print(2, 46, "        ");
-[v _temp `f ~T0 @X0 1 a ]
-[v _adc_mq `f ~T0 @X0 1 a ]
-[v _rs `f ~T0 @X0 1 a ]
-[v _ppm `f ~T0 @X0 1 a ]
-[v _hum `f ~T0 @X0 1 a ]
-[v _lux `f ~T0 @X0 1 a ]
-"103
-[; ;man.c: 103:         OLED_Print(2, 46, bufPPM);
-[v _bufTemp `uc ~T0 @X0 -> 10 `i a ]
-[v _bufPPM `uc ~T0 @X0 -> 8 `i a ]
-"104
-[; ;man.c: 104:         OLED_Print(2, 82, "pm");
-[v _bufHum `uc ~T0 @X0 -> 10 `i a ]
-[v _bufLux `uc ~T0 @X0 -> 10 `i a ]
-"106
-[; ;man.c: 106: 
-[e :U 394 ]
-{
-"108
-[; ;man.c: 108:         floatStr(temp, bufTemp, 55);
-[e $ ! != -> _bme_ok `i -> 0 `i 396  ]
-{
-"109
-[; ;man.c: 109:         OLED_Print(4, 46, "        ");
-[e = _hum ( _BME280_ReadHumidity ..  ]
-"110
-[; ;man.c: 110:         OLED_Print(4, 46, bufTemp);
-[e ( _humStr (2 , _hum &U _bufHum ]
-"111
-[; ;man.c: 111:         OLED_Print(4, 82, "C");
-[e ( _OLED_Print (3 , , -> -> 0 `i `uc -> -> 46 `i `uc :s 5C ]
-"112
-[; ;man.c: 112: 
-[e ( _OLED_Print (3 , , -> -> 0 `i `uc -> -> 46 `i `uc -> &U _bufHum `*Cuc ]
-"113
-[; ;man.c: 113: 
-}
-[e $U 397  ]
-[e :U 396 ]
-{
-"114
-[; ;man.c: 114:         lux = BH1750_ReadLux();
-[e ( _OLED_Print (3 , , -> -> 0 `i `uc -> -> 46 `i `uc :s 6C ]
-"115
-[; ;man.c: 115:         luxStr(lux, bufLux);
-}
-[e :U 397 ]
-"118
-[; ;man.c: 118: 
-[e = _adc_mq ( _MQ135_LeerADC ..  ]
-"119
-[; ;man.c: 119:         _delay((unsigned long)((1000)*(8000000UL/4000.0)));
-[e = _rs ( _MQ135_calcularRs (1 _adc_mq ]
-"120
-[; ;man.c: 120:     }
-[e = _ppm ( _MQ135_calcularPPM (2 , _rs -> .10.0 `f ]
-"121
-[; ;man.c: 121: }
-[e ( _ppmStr (2 , -> _ppm `ui &U _bufPPM ]
-"122
-[e ( _OLED_Print (3 , , -> -> 2 `i `uc -> -> 46 `i `uc :s 7C ]
-"123
-[e ( _OLED_Print (3 , , -> -> 2 `i `uc -> -> 46 `i `uc -> &U _bufPPM `*Cuc ]
-"124
-[e ( _OLED_Print (3 , , -> -> 2 `i `uc -> -> 82 `i `uc :s 8C ]
-"127
-[e = _temp ( _leerTemperatura ..  ]
-"128
-[e ( _floatStr (3 , , _temp &U _bufTemp -> -> 55 `i `uc ]
-"129
-[e ( _OLED_Print (3 , , -> -> 4 `i `uc -> -> 46 `i `uc :s 9C ]
-"130
-[e ( _OLED_Print (3 , , -> -> 4 `i `uc -> -> 46 `i `uc -> &U _bufTemp `*Cuc ]
-"131
-[e ( _OLED_Print (3 , , -> -> 4 `i `uc -> -> 82 `i `uc :s 10C ]
-"134
-[e = _lux ( _BH1750_ReadLux ..  ]
-"135
-[e ( _luxStr (2 , _lux &U _bufLux ]
-"136
-[e ( _OLED_Print (3 , , -> -> 6 `i `uc -> -> 46 `i `uc :s 11C ]
-"137
-[e ( _OLED_Print (3 , , -> -> 6 `i `uc -> -> 46 `i `uc -> &U _bufLux `*Cuc ]
-"139
-[e ( __delay (1 -> * -> -> 1000 `i `d / -> -> 8000000 `ul `d .4000.0 `ul ]
-"140
-}
-[e :U 393 ]
-[e $U 394  ]
-[e :U 395 ]
-"141
-[e :UE 389 ]
-}
-[a 8C 112 109 0 ]
-[a 10C 67 0 ]
-[a 3C 84 101 109 112 58 0 ]
-[a 2C 65 105 114 101 58 0 ]
-[a 4C 76 117 122 58 32 0 ]
-[a 1C 72 117 109 58 32 0 ]
-[a 6C 69 82 82 79 82 32 32 32 0 ]
-[a 5C 32 32 32 32 32 32 32 32 0 ]
-[a 7C 32 32 32 32 32 32 32 32 0 ]
-[a 9C 32 32 32 32 32 32 32 32 0 ]
-[a 11C 32 32 32 32 32 32 32 32 0 ]

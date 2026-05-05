@@ -1,4 +1,4 @@
-# 1 "man.c"
+# 1 "bh1750.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 295 "<built-in>" 3
@@ -6,7 +6,12 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "man.c" 2
+# 1 "bh1750.c" 2
+
+# 1 "./bh1750.h" 1
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -5737,7 +5742,11 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.10\\pic\\include/xc.h" 2 3
-# 2 "man.c" 2
+# 5 "./bh1750.h" 2
+# 21 "./bh1750.h"
+void BH1750_Init(void);
+float BH1750_ReadLux(void);
+# 3 "bh1750.c" 2
 # 1 "./i12c.h" 1
 
 
@@ -5750,169 +5759,77 @@ void I2C_Start(void);
 void I2C_Stop(void);
 void I2C_RepeatedStart(void);
 unsigned char I2C_Write(unsigned char data);
-# 3 "man.c" 2
-# 1 "./ssd1306.h" 1
-# 12 "./ssd1306.h"
-void OLED_Init(void);
-void OLED_Clear(void);
-void OLED_SetCursor(unsigned char page, unsigned char col);
-void OLED_SendChar(char c);
-void OLED_Print(unsigned char page, unsigned char col, const char *str);
-# 4 "man.c" 2
-# 1 "./lm35.h" 1
-# 10 "./lm35.h"
-void ADC_Init(void);
-float leerTemperatura(void);
-# 5 "man.c" 2
-# 1 "./mq135.h" 1
-# 26 "./mq135.h"
-void MQ135_Init(void);
-float MQ135_LeerADC(void);
-float MQ135_calcularRs(float adc);
-float MQ135_calcularPPM(float rs, float r0);
-float MQ135_calibrarR0(void);
-# 6 "man.c" 2
-# 1 "./bme280.h" 1
-# 26 "./bme280.h"
-unsigned char BME280_Init(void);
-float BME280_ReadHumidity(void);
-# 7 "man.c" 2
-# 1 "./bh1750.h" 1
-# 21 "./bh1750.h"
-void BH1750_Init(void);
-float BH1750_ReadLux(void);
-# 8 "man.c" 2
-
-#pragma config FOSC = INTOSC_HS
-#pragma config CPUDIV = OSC1_PLL2
-#pragma config PLLDIV = 1
-#pragma config WDT = OFF
-#pragma config PWRT = ON
-#pragma config BOR = OFF
-#pragma config LVP = OFF
-#pragma config MCLRE = ON
-#pragma config PBADEN = OFF
-#pragma config DEBUG = OFF
+# 4 "bh1750.c" 2
 
 
 
 
-void floatStr(float num, char *buf, unsigned char maxVal) {
-    unsigned char i, entero, decimal;
-    for(i = 0; i < 10; i++) buf[i] = ' ';
-    if(num < 0.0) num = 0.0;
-    if(num > (float)maxVal) num = (float)maxVal;
-    entero = (unsigned char)num;
-    decimal = (unsigned char)((num - (float)entero) * 10.0);
-    buf[0] = (char)((entero / 10) + '0');
-    buf[1] = (char)((entero % 10) + '0');
-    buf[2] = '.';
-    buf[3] = (char)(decimal + '0');
-    buf[4] = ' ';
-    buf[5] = '\0';
+static void BH1750_SendCmd(unsigned char cmd) {
+    I2C_Start();
+    I2C_Write(0x46);
+    I2C_Write(cmd);
+    I2C_Stop();
+    _delay((unsigned long)((5)*(8000000UL/4000.0)));
 }
 
-void ppmStr(unsigned int ppm, char *buf) {
-    unsigned char i;
-    for(i = 0; i < 8; i++) buf[i] = ' ';
-    buf[0] = (char)((ppm / 1000) + '0');
-    buf[1] = (char)(((ppm % 1000)/100) + '0');
-    buf[2] = (char)(((ppm % 100)/10) + '0');
-    buf[3] = (char)((ppm % 10) + '0');
-    buf[4] = ' ';
-    buf[5] = '\0';
+static unsigned int BH1750_LeerBytes(void) {
+    unsigned char msb, lsb;
+    unsigned int resultado;
+
+    I2C_Start();
+    I2C_Write(0x46 | 0x01);
+
+
+    SSPCON2bits.RCEN = 1;
+    while(!SSPSTATbits.BF);
+    msb = SSPBUF;
+    SSPCON2bits.ACKDT = 0;
+    SSPCON2bits.ACKEN = 1;
+    while(SSPCON2bits.ACKEN);
+
+
+    SSPCON2bits.RCEN = 1;
+    while(!SSPSTATbits.BF);
+    lsb = SSPBUF;
+    SSPCON2bits.ACKDT = 1;
+    SSPCON2bits.ACKEN = 1;
+    while(SSPCON2bits.ACKEN);
+
+    I2C_Stop();
+
+
+    resultado = ((unsigned int)msb << 8) | lsb;
+    return resultado;
 }
 
-void humStr(float num, char *buf) {
-    unsigned char i, entero, decimal;
-    for(i = 0; i < 10; i++) buf[i] = ' ';
-    if(num < 0.0) num = 0.0;
-    if(num > 100.0) num = 100.0;
-    entero = (unsigned char)num;
-    decimal = (unsigned char)((num - (float)entero) * 10.0);
-    buf[0] = (char)((entero / 10) + '0');
-    buf[1] = (char)((entero % 10) + '0');
-    buf[2] = '.';
-    buf[3] = (char)(decimal + '0');
-    buf[4] = '%';
-    buf[5] = ' ';
-    buf[6] = '\0';
-}
+void BH1750_Init(void) {
+    _delay((unsigned long)((100)*(8000000UL/4000.0)));
 
-void luxStr(float lux, char *buf) {
-    unsigned int val;
-    unsigned char i;
-    for(i = 0; i < 10; i++) buf[i] = ' ';
-    if(lux < 0.0) lux = 0.0;
-    if(lux > 9999.0) lux = 9999.0;
-    val = (unsigned int)lux;
-    buf[0] = (char)((val / 1000) + '0');
-    buf[1] = (char)(((val % 1000)/100) + '0');
-    buf[2] = (char)(((val % 100)/10) + '0');
-    buf[3] = (char)((val % 10) + '0');
-    buf[4] = ' ';
-    buf[5] = 'l';
-    buf[6] = 'x';
-    buf[7] = ' ';
-    buf[8] = '\0';
-}
+    BH1750_SendCmd(0x01);
+    BH1750_SendCmd(0x07);
+    BH1750_SendCmd(0x10);
 
-void main(void) {
-    OSCCON = 0x72;
-    while(!OSCCONbits.IOFS);
+
     _delay((unsigned long)((200)*(8000000UL/4000.0)));
-    CMCON = 0x07;
+}
 
-    ADC_Init();
-    MQ135_Init();
-    unsigned char bme_ok = BME280_Init();
-    BH1750_Init();
-    I2C_Init();
-    OLED_Init();
+float BH1750_ReadLux(void) {
+    unsigned int suma = 0;
+    unsigned char i;
+    float lux;
 
 
-    OLED_Print(0, 10, "Hum: ");
-    OLED_Print(2, 10, "Aire:");
-    OLED_Print(4, 10, "Temp:");
-    OLED_Print(6, 10, "Luz: ");
-
-    float temp, adc_mq, rs, ppm, hum, lux;
-    char bufTemp[10], bufPPM[8];
-    char bufHum[10], bufLux[10];
-
-    while(1) {
-
-        if(bme_ok) {
-            hum = BME280_ReadHumidity();
-            humStr(hum, bufHum);
-            OLED_Print(0, 46, "        ");
-            OLED_Print(0, 46, bufHum);
-        } else {
-            OLED_Print(0, 46, "ERROR   ");
-        }
-
-
-        adc_mq = MQ135_LeerADC();
-        rs = MQ135_calcularRs(adc_mq);
-        ppm = MQ135_calcularPPM(rs, 10.0);
-        ppmStr((unsigned int)ppm, bufPPM);
-        OLED_Print(2, 46, "        ");
-        OLED_Print(2, 46, bufPPM);
-        OLED_Print(2, 82, "pm");
-
-
-        temp = leerTemperatura();
-        floatStr(temp, bufTemp, 55);
-        OLED_Print(4, 46, "        ");
-        OLED_Print(4, 46, bufTemp);
-        OLED_Print(4, 82, "C");
-
-
-        lux = BH1750_ReadLux();
-        luxStr(lux, bufLux);
-        OLED_Print(6, 46, "        ");
-        OLED_Print(6, 46, bufLux);
-
-        _delay((unsigned long)((1000)*(8000000UL/4000.0)));
+    for(i = 0; i < 4; i++) {
+        suma += BH1750_LeerBytes();
+        _delay((unsigned long)((200)*(8000000UL/4000.0)));
     }
+
+
+    lux = (float)(suma / 4) / 1.2;
+
+
+    if(lux < 0.0) lux = 0.0;
+    if(lux > 65535.0) lux = 65535.0;
+
+    return lux;
 }
